@@ -1,0 +1,64 @@
+<!-- DOM API 사용법 -->
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+<style>
+
+  div {
+    border: 1px solid red;
+    padding: 10px;
+  }
+
+  .child{
+    border: 5px solid gray;
+    width: 50px;
+    height: 20px;
+  }
+
+</style>
+
+</head>
+<body>
+
+  <button id="btn1" type="button">태그 생성</button>
+  <div id="d1"></div>
+
+<script>
+
+/*
+
+태그 생성 하기 I - createElement ()
+
+*/
+
+var d1 = document.querySelector("#d1")
+var btn1 = document.querySelector("#btn1")
+
+// btn1 에 click 이벤트 리스너(핸들러) 등록하기
+btn1.addEventListener('click', function(){
+
+  // div 태그 생성
+  var e = document.createElement('div')
+  // e.className = "child"
+  e.setAttribute("class" , "child")
+
+  // 콘텐츠 생성
+  var c = document.createTextNode('내용')
+
+  // 콘텐츠를 태그에 넣는다
+  e.appendChild(c);
+
+  console.log(e)
+
+  var d1 = document.querySelector("#d1");
+  d1.appendChild(e);
+
+})
+
+</script>
+
+</body>
+</html>

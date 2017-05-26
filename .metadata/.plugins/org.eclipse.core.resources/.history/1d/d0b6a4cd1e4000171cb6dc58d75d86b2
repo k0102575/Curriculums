@@ -1,0 +1,71 @@
+/* 멀티 태스킹 : Critical Section(Critical Region) */
+
+package step19;
+
+public class Test05_1 {
+  
+  static class Account {
+    long balance;
+  
+    public Account(long balance) {
+      this.balance = balance;
+    } // 생성자
+    
+    
+    public long withdraw(long money) {
+      long temp = this.balance;
+      
+      int delayCount = (int) (Math.random() * 1000);
+      
+      double x = 3.141592;
+      for (int i =0; i < delayCount; i++) {
+        x /= 345.2345;
+      }
+      
+      temp -= money;
+      
+      if (temp >= 0) {
+        this.balance = temp;
+        return money;
+        // 인출했어
+      }
+      
+      return 0;
+      // 인출 못했어
+    } // withdraw()
+    
+    
+  
+  } // class Account
+  
+  
+  static class ATM extends Thread {
+    
+    public MyThread (String name) {
+      this.setName(name);
+    }
+    
+    public void run() {
+      for (int i = 0; i < 1000; i++) {
+        System.out.printf("[%s] %d\n", this.getName(), i);
+      }
+    } // run()
+    
+  } // class MyThread 쓰레드 상속
+  
+  public static void main(String[] args) {
+    System.out.println("step19 Test05_1 실행중");
+    System.out.println();
+    
+    MyThread t1 = new MyThread("t1");
+    MyThread t2 = new MyThread("t2");
+    MyThread t3 = new MyThread("t3");
+    Thread main = Thread.currentThread();
+    
+    System.out.printf("t1 = %d\n", t1.getPriority());
+    System.out.printf("t2 = %d\n", t2.getPriority());
+    System.out.printf("t3 = %d\n", t3.getPriority());
+    System.out.printf("main = %d\n", main.getPriority());
+    
+  }
+}

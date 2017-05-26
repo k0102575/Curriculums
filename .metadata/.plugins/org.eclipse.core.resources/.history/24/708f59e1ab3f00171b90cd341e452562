@@ -1,0 +1,38 @@
+/* 유틸리티 클래스 : properties 클래스 
+ * => .properties 파일을 다룰 때 주로 사용한다.
+ * => 파일 형식은 다음과 같다.
+ *    key=value
+ *    key=value
+ *    ...
+ * */
+package step08;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+public class Test08_1 {
+
+  public static void main(String[] args) throws FileNotFoundException, IOException {
+    System.out.println("step08 Test08_1 실행");
+    System.out.println();
+    
+    Properties props = new Properties();
+    
+    props.load(new FileReader("test.properties"));
+    
+    System.out.println(props.getProperty("key1"));
+    System.out.println(props.getProperty("key2"));
+    System.out.println(props.getProperty("key3"));
+    System.out.println(props.getProperty("key4"));
+    
+    System.out.println("------------------------");
+    
+    System.out.println(props.get("key1"));
+    System.out.println(props.get("key2"));
+    System.out.println(props.get("key3"));
+    System.out.println(props.get("key4"));
+  }
+
+}

@@ -1,0 +1,37 @@
+package step15;
+
+public class Student2 {
+  
+  private String name;
+  private int age;
+  private SchoolLevel schoolLevel;
+  
+  
+  
+  public String getName() {
+    return name;
+  }
+  
+  public void setName(String name) {
+    this.name = name;
+  }
+  
+  public int getAge() {
+    return age;
+  }
+  
+  public void setAge(int age) {
+    this.age = age;
+  }
+  
+  public int getSchoolLevel() {
+    return schoolLevel;
+  }
+  
+  public void setSchoolLevel(int schoolLevel) {
+    this.schoolLevel = schoolLevel;
+
+  
+  
+  
+}

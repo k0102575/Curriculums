@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+</head>
+<body>
+  <button id="btn1" type="button">버튼1</button>
+  <button id="btn2" type="button">버튼2</button>
+
+<script>
+/* 애플리케이션에서 이벤트를 발생시키기 (triggering event)
+=>
+*/
+
+var btn1 = document.querySelector('#btn1')
+var btn2 = document.querySelector('#btn2')
+btn1.addEventListener('click', function(event){
+  //1)
+  // =>
+  var me = new MouseEvent('click')
+
+  //2)
+  btn2.dispatchEvent(me)
+})
+
+btn2.addEventListener('click', function(event){
+  console.log('버튼2 눌렀다!');
+})
+
+</script>
+
+</body>
+</html>

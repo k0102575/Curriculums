@@ -1,0 +1,102 @@
+<!-- AJAX 사용법 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+                         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+                         crossorigin="anonymous">
+  <style>
+  .container {
+    width: 600px;
+    margin: 0px auto;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<table id="student-tbl" class="table table-hover">
+<thead>
+  <tr>
+    <th>번호</th>
+    <th>이름</th>
+    <th>전화</th>
+    <th>이메일</th>
+    <th>재직여부</th>
+  </tr>
+<thead>
+<tbody>
+</tbody>
+</table>
+
+<button type="button" class="btn btn-primary" id="add-btn">추가</button>
+
+</div>
+<script src="00.js"></script>
+
+<script>
+"use strict"
+/* AJAX 응용 II
+=>
+*/
+  var tbody = document.querySelector('#student-tbl > tbody'),
+      addBtn = document.querySelector('#add-btn');
+
+  var xhr = new XMLHttpRequest()
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState < 4)
+    return
+
+    var result = JSON.parse(xhr.responseText)
+
+    if (result.status != 'success'){
+      alert('데이터를 가져오는데 실패했습니다.')
+      return
+    }
+
+    var list = result.data.list;
+    for (var s of list){
+      var tr = document.createElement("tr")
+      tr.innerHTML = "<tr><td>" + s.memberNo +
+                     "</td><td><a href='#' data-no='" + s.memberNo + "' class='view-link'>" + s.name +
+                     "</a></td><td>" + s.tel +
+                     "</td><td>" + s.email +
+                     "</td><td>" + (s.working ? "재직중":"실업중") + "</td><tr>"
+    tbody.appendChild(tr)
+    }
+
+    var viewLinks = document.querySelectorAll('table .view-link')
+    for (var e of viewLinks) {
+      e.onclick = onClickViewLink;
+    }
+
+  }
+  xhr.open('get', 'http://localhost:8080/webapp/student/list.json?pageNo=1&pageSize=8', true)
+  xhr.send()
+
+// a 태그에 click 이벤트 핸드러를 추가한다.
+// var viewLinks = document.querySelector('.view-link')  서버에 요청하자마자 a태그를 찾아봤자 존재하지 않는다. 비동기 방식이라서 서버에서 가져올때 까지 시간이 걸린다.
+
+function onClickViewLink(event) {
+  // console.log(this["data-no"]) // 태그의 원래 있던 속성이 아닌경우, 이런식으로 꺼낼 수 없다. 변수명에 -가 들어갈수없어서 대괄호가 들어갔다
+  console.log(this.getAttribute("data-no"))  // 태그의 추가한 속성은 이렇게 꺼내라
+  // location.href = 'test09_view.html'
+  // 객체의 변수값을 꺼낼때는 프로퍼티 값을 꺼낼때는 값을 꺼낼때는 다 같은말이다.
+  location.href = 'test09_view.html?no=' + this.getAttribute('data-no')
+  event.preventDefault()
+}
+
+addBtn.onclick = function(){
+  location.href = "test09_view.html" // 새창이다
+}
+
+
+</script>
+</body>
+</html>
+
+
+
+
+<!-- -->

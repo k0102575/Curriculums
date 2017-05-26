@@ -1,0 +1,26 @@
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class BIT_cp {
+  
+  public static void main(String[] args) throws IOException {
+    
+    FileReader in = new FileReader("temp/" + args[0]);
+    int b = 0;
+    
+    
+    FileWriter out = new FileWriter("temp/" + args[1]);
+    
+    while ((b = in.read()) != -1){
+    out.write(b);
+    System.out.println(b);
+    }
+    
+    
+    in.close();
+    out.close();
+    
+  }
+
+}

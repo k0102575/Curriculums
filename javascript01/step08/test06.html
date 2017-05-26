@@ -1,0 +1,54 @@
+<!-- AJAX 사용법 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+
+  body {
+    background-color: gray;
+  }
+
+  body > div {
+    border: 1px solid red;
+    min-height: 300px;
+  }
+  </style>
+</head>
+<body>
+<h1>GET 요청</h1>
+링크: <a href="http://localhost:8080/webapp/student/list.json?pageNo=1&pageSize=6">요청</a><br>
+폼:
+<form action="http://localhost:8080/webapp/student/list.json" method="get">
+  페이지번호: <input type="text" name="pageNo"><br>
+  페이지크기: <input type="text" name="pageSize"><br>
+  <button>요청</button>
+</form>
+
+<h1>POST 요청</h1>
+<!-- 링크는 post요청을 할 방법이 없다 -->
+<form action="http://localhost:8080/webapp/student/list.json" method="post">
+  페이지번호: <input type="text" name="pageNo"><br>
+  페이지크기: <input type="text" name="pageSize"><br>
+  <button>요청</button>
+</form>
+
+<script>
+"use strict"
+/* HTTP(Hyper-Text Transfer Protocol) 프로토콜
+
+*/
+
+/* GET 요청 형식
+
+*/
+
+</script>
+</body>
+</html>
+
+
+
+
+<!-- -->

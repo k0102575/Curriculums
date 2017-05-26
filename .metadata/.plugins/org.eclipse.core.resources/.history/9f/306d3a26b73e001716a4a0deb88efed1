@@ -1,0 +1,23 @@
+/* character stream 클래스 : FileReader vs FileInputStream */
+
+package step16;
+
+import java.io.FileInputStream;
+
+public class Test06_1_In {
+
+  public static void main(String[] args) throws Exception {
+    System.out.println("step16 Test06_1_In 실행");
+    System.out.println();
+    
+    FileInputStream in0 = new FileInputStream("test06_1.txt");
+    
+    int b = 0;
+    
+    while ((b = in.read()) != -1){
+      System.out.printf("%x ", b);
+    }
+    
+  }
+
+}

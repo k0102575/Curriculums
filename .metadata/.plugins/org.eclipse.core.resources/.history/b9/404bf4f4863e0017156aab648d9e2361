@@ -1,0 +1,30 @@
+/* 데이터 프로세싱 스트림 클래스 - BufferedInputStream */
+
+package step16;
+
+import java.io.FileInputStream;
+
+public class Test04_1 {
+
+  public static void main(String[] args) throws Exception {
+    System.out.println("step16 Test04_1 실행");
+    System.out.println();
+    
+    FileInputStream in = new FileInputStream("test02_1.data");
+    
+    int b = in.read();
+    
+    System.out.printf("%x ", b);
+    
+    b = in.read();
+    
+    System.out.printf("%x ", b);
+    
+    b = in.read();
+    
+    System.out.printf("%x ", b);
+    
+    in.close();
+  }
+
+}

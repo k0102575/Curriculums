@@ -1,0 +1,19 @@
+/* 유틸리티 클래스 : properties 클래스 응용 II */
+package step08;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.Set;
+
+public class Test08_3 {
+
+  public static void main(String[] args) throws FileNotFoundException, IOException {
+    System.out.println("step08 Test08_3 실행");
+    System.out.println();
+    
+    Properties props = System.getProperties();
+    
+  }
+
+}

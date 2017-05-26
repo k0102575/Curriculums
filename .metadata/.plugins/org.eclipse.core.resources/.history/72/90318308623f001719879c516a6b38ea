@@ -1,0 +1,16 @@
+/* 키보드 입력: system.in */
+
+package step16;
+
+import org.omg.CORBA_2_3.portable.InputStream;
+
+public class Test07_1_In {
+
+  public static void main(String[] args) throws Exception {
+    
+    InputStream in = System.in;
+    
+    Scanner keyScanner = new Scanner(in);
+  }
+
+}

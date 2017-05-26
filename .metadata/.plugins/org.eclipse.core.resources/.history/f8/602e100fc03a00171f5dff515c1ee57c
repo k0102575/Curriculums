@@ -1,0 +1,7 @@
+/* enum 문법 : 상수를 정의할 때 값을 지정할 수 있다. */
+
+package step15;
+
+public enum SchoolLevel2 {
+  HIGH_SCHOOL = 1, BACHELOR, MASTER, DOCTOR
+}

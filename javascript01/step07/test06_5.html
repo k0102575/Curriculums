@@ -1,0 +1,27 @@
+<!-- DOM API 사용법 -->
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+</head>
+<body>
+  <button id="btn1" type="button">버튼1</button>
+  <button id="btn2" type="button" onclick="console.log(event)">버튼2</button>
+
+<script>
+
+/* 이벤트 다루기 - 이벤트 정보
+*/
+
+
+btn1.addEventListener('click', function(event){
+  console.log(event);
+})
+
+
+</script>
+
+</body>
+</html>

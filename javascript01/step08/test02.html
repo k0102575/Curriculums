@@ -1,0 +1,66 @@
+<!-- AJAX 사용법 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+
+  body {
+    background-color: gray;
+  }
+
+  body > div {
+    border: 1px solid red;
+    min-height: 300px;
+  }
+  </style>
+</head>
+<body>
+  <button id="btn1" type="button">서버에 요청하기</button>
+  <button id="btn2" type="button">서버에서 받은 값 출력하기</button><br>
+  <textarea id="ta" rows="30" cols="100"></textarea>
+<script>
+"use strict"
+/* AJAX 비동기 요청
+
+*/
+var btn1 = document.querySelector('#btn1')
+var btn2 = document.querySelector('#btn2')
+var ta = document.querySelector('#ta')
+var xhr;  // 로컬변수면 버튼2에서 확인할수가 없다 글로벌 변수로 만들어라.
+
+btn1.addEventListener('click', function(event) {
+  xhr = new XMLHttpRequest()
+
+  xhr.open('get', 'http://localhost:8080/webapp/student/list.json', true)
+
+  xhr.send() //
+
+  //
+  ta.value = xhr.responseText
+
+  window.alert('버튼1 실행 완료')
+})
+
+btn2.addEventListener('click', function() {
+
+  //
+  //
+  ta.value = xhr.responseText
+
+})
+
+/*
+
+*/
+
+
+</script>
+</body>
+</html>
+
+
+
+
+<!-- -->

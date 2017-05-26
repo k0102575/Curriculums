@@ -1,0 +1,28 @@
+/* 소켓 프로그래밍: 서버 프로그램 만들기 */
+
+package step18;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Test02_1 {
+  public static void main(String[] args) throws IOException {
+    
+    System.out.println("step18 Test02_1 서버 실행중");
+    System.out.println();
+    
+    ServerSocket serverSocket = new ServerSocket(8888, 3);
+    
+    Socket socket = serverSocket.accept();
+    InputStream in0 = socket.getInputStream();
+    OutputStream out = socket.getOutputStream();
+    
+    Scanner in = new Scanner(in0);
+    
+    serverSocket.close();
+    
+  }  // main
+}

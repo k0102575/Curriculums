@@ -1,0 +1,15 @@
+/* 키보드 입력: system.in */
+
+package step16;
+
+import java.io.FileInputStream;
+import java.io.FileReader;
+
+public class Test07_1_In {
+
+  public static void main(String[] args) throws Exception {
+    
+    
+  }
+
+}

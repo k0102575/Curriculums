@@ -1,0 +1,54 @@
+<!-- AJAX 사용법 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+  </style>
+</head>
+<body>
+
+<table id="student-tbl">
+<tr>
+  <th>번호</th>
+  <th>이름</th>
+  <th>전화</th>
+  <th>이메일</th>
+  <th>재직여부</th>
+</tr>
+
+</table>
+
+<script>
+"use strict"
+/* AJAX 응용
+=> 서버에서 학생 목록 데이터를 받아 테이블로 출력하기
+*/
+
+  var xhr = new XMLHttpRequest()
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState < 4)
+    return
+
+    // 
+    //
+    var result = JSON.parse(xhr.responseText)
+
+    console.log(result)
+    console.log('-------------------------------------------------------------')
+  }
+  xhr.open('get', 'http://localhost:8080/webapp/student/list.json?pageNo=2&pageSize=8', true)
+  xhr.send()
+
+  // 넘어 오는 데이터는 JSON 문자열이 넘어온다.
+  // 우리나라 API 에서는 XML 형태가 아니면 JSON형태로 넘어온다.
+
+</script>
+</body>
+</html>
+
+
+
+
+<!-- -->

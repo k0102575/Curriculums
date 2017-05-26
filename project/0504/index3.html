@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Home Work</title>
+  <style>
+  [value='0'] {
+    background: gray;
+    color: gray;
+  }
+
+  [value='0']:hover {
+    background: gray;
+    color: gray;
+  }
+/*
+  #con {
+    width: 500px;
+    height: 500px;
+  }*/
+
+  .btn{
+    width: 70px;
+    height: 70px;
+  }
+
+  #btnRandom{
+    width: 100px;
+    height: 100px;
+    margin-left: 210px;
+  }
+
+  </style>
+</head>
+<body>
+  <table id="con">
+    <tr>
+      <td><input type="button" class="btn" id="btn1" onClick="change(0, 0)" value="1"></input></td>
+      <td><input type="button" class="btn" id="btn2" onClick="change(0, 1)" value="2"></input></td>
+      <td><input type="button" class="btn" id="btn3" onClick="change(0, 2)" value="3"></input></td>
+    </tr>
+    <tr>
+      <td><input type="button" class="btn" id="btn4" onClick="change(1, 0)" value="4"></input></td>
+      <td><input type="button" class="btn" id="btn5" onClick="change(1, 1)" value="5"></input></td>
+      <td><input type="button" class="btn" id="btn6" onClick="change(1, 2)" value="6"></input></td>
+    </tr>
+    <tr>
+      <td><input type="button" class="btn" id="btn7" onClick="change(2, 0)" value="7"></input></td>
+      <td><input type="button" class="btn" id="btn8" onClick="change(2, 1)" value="8"></input></td>
+      <td><input type="button" class="btn" id="btn0" onClick="change(2, 2)" value="0"></input></td>
+    </tr>
+  </table>
+  <div>
+    <button onClick="btnRandom()" class="btn" id="btnRandom">섞기</button>
+  </div>
+
+<script>
+
+var mix = []
+var puz = [[],[],[]]
+var tmp = 0;
+
+var btn1 = document.querySelector("#btn1"),
+    btn2 = document.querySelector("#btn2"),
+    btn3 = document.querySelector("#btn3"),
+    btn4 = document.querySelector("#btn4"),
+    btn5 = document.querySelector("#btn5"),
+    btn6 = document.querySelector("#btn6"),
+    btn7 = document.querySelector("#btn7"),
+    btn8 = document.querySelector("#btn8"),
+    btn0 = document.querySelector("#btn0");
+
+function change(x, y){
+
+  if (x<2 && puz[x + 1][y] == 0){
+    tmp = puz[x][y]
+    puz[x][y] = puz[x + 1][y]
+    puz[x + 1][y] = tmp
+    x,y,tmp = 0;
+    dis()
+    test()
+    return;
+  }
+
+  if (y<2 && puz[x][y + 1] == 0){
+    tmp = puz[x][y]
+    puz[x][y] = puz[x][y + 1]
+    puz[x][y + 1] = tmp
+    x,y,tmp = 0;
+    dis()
+    test()
+    return;
+  }
+
+  if (x>0 && puz[x - 1][y] == 0){
+    tmp = puz[x][y]
+    puz[x][y] = puz[x - 1][y]
+    puz[x - 1][y] = tmp
+    x,y,tmp = 0;
+    dis()
+    test()
+    return;
+  }
+
+  if (y>0 && puz[x][y - 1] == 0){
+    tmp = puz[x][y]
+    puz[x][y] = puz[x][y - 1]
+    puz[x][y - 1] = tmp
+    x,y,tmp = 0;
+    dis()
+    test()
+    return;
+  }
+
+}
+
+
+
+
+function btnRandom(){
+
+    while(mix.length < 9){
+      var n = Math.round(Math.random() * 8)
+      if (mix.indexOf(n)==-1){
+      mix.push(n);
+    }
+  }
+
+  puz[0][0] = mix[0]
+  puz[0][1] = mix[1]
+  puz[0][2] = mix[2]
+  puz[1][0] = mix[3]
+  puz[1][1] = mix[4]
+  puz[1][2] = mix[5]
+  puz[2][0] = mix[6]
+  puz[2][1] = mix[7]
+  puz[2][2] = mix[8]
+
+
+dis()
+mix = [];
+
+} // btnRandom()
+
+function dis(){
+btn1.value = puz[0][0]
+btn2.value = puz[0][1]
+btn3.value = puz[0][2]
+btn4.value = puz[1][0]
+btn5.value = puz[1][1]
+btn6.value = puz[1][2]
+btn7.value = puz[2][0]
+btn8.value = puz[2][1]
+btn0.value = puz[2][2]
+}
+
+function test(){
+  var clear = [[1,2,3],[4,5,6],[7,8,0]]
+  if(puz == clear){
+    alert("완성했습니다.")
+  }
+}
+
+</script>
+
+</body>
+</html>

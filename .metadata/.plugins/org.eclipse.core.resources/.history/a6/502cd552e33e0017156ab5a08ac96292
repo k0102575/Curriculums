@@ -1,0 +1,16 @@
+
+public class BIT_delr {
+
+  public static void main(String[] args) {
+    
+    
+    if (file.isDirectory() || (file.isFile() && file.getName().endsWith(".class"))) {
+      return true;
+    }
+    return false;
+  }
+  
+  
+  }
+
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+  body {
+    background-color: black;
+  }
+
+  .container {
+    position: relative;
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    margin: 0px auto;
+  }
+
+  #sun {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    left: 300px;
+    top: 300px;
+    /*background-color: RED;*/
+    background-image: url("http://cfile23.uf.tistory.com/image/174D7F4050B715D129D401");
+    background-position: 30% 50%;
+  }
+
+  #earth {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    left: 150px;
+    top: 300px;
+    background-image: url("https://cdn.namuwikiusercontent.com/59/5993cbfc9be7609aeccddee1e24750f86a52b8ff8e1f635991da5a83be607525.jpg?e=1501702290&k=_WVoJpjGAuZQ6XE_XQ0DCg");
+    background-position: 40% 60%;
+    /*background-color: GREEN;*/
+  }
+
+  div {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #moon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    left: 100px;
+    top: 300px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Back_side_of_the_Moon_AS16-3021.jpg");
+    background-position: 40% 60%;
+    /*background-color: GRAY;*/
+  }
+
+  </style>
+</head>
+<body>
+<div class="container">
+<div id="sun"></div>
+<div id="earth"></div>
+<div id="moon"></div>
+</div><!-- div.container -->
+<script>
+window.$ = window.jQuery = require('jquery')
+"use strict"
+var earth = $('#earth'),
+    moon = $('#moon'),
+    sun = document.querySelector("#sun");
+var degree = 0,
+    moondegree = 0,
+    y = 0,
+    x = 0;
+
+setInterval(function() {
+  if (degree > 360) {
+    degree = 0
+  }
+  var r = radian(degree)
+  degree += 1
+  y = Math.floor(Math.sin(r) * 150) + 300;
+  x = Math.floor(Math.cos(r) * 150) + 300;
+  earth.css('top', y + 'px').css('left', x + 'px')
+}, 100)
+
+setInterval(function () {
+  if (degree > 360) {
+    degree = 0
+  }
+  var r = radian(degree)
+  moondegree += 10
+  var my = Math.floor(Math.sin(r) * 50) + y;
+  var mx = Math.floor(Math.cos(r) * 50) + x;
+  moon.css('top', my + 'px').css('left', mx + 'px')
+}, 70);
+
+function  radian(degree) {
+  return degree * 180 / Math.PI
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+<!-- -->

@@ -1,0 +1,15 @@
+/* 소켓 프로그래밍: 서버 프로그램 만들기 */
+
+package step18;
+
+public class Test01_1 {
+  public static void main(String[] args) {
+    
+    // 1) 서버 소켓 만들기
+    ServerSocket serverSocket = new ServerSocket(8888);
+    
+    
+    
+    
+  }  // main
+}

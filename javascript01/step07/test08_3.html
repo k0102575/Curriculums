@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+</head>
+<body>
+  <button id="btn1" type="button">버튼1</button>
+  <button id="btn2" type="button">버튼2</button>
+
+<script>
+/* 사용자 정의 이벤트(custom event)를 발생시키기 (triggering event)
+=>
+*/
+
+var btn1 = document.querySelector('#btn1')
+var btn2 = document.querySelector('#btn2')
+btn1.addEventListener('click', function(event){
+  var ce = new CustomEvent('okok', {detail: {name:'홍길동', age:20, working: false}})
+  btn2.dispatchEvent(ce)
+  // 디테일이란 이름으로 상대편에게 넘겨줄 데이터를 저장해 넘긴다
+  // 하나의 윈도우에서 다른프로그램으로 넘길때 주로 사용한다.
+  // 윈도우에서 윈도우로 전달할때 사용
+})
+
+btn2.addEventListener('okok', function(event){
+  console.log(event)
+  console.log(event.detail.name)
+  console.log(event.detail.age)
+  console.log(event.detail.working)
+})
+
+</script>
+
+</body>
+</html>
