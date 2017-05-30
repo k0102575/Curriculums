@@ -1,0 +1,24 @@
+package test;
+
+public class Test {
+  
+  public static class ResultSet {
+    
+    public ResultSet() {
+      
+    }
+  }
+  
+  public static void main(String[] args) {
+    
+    ResultSet rs = new ResultSet();
+    
+    
+    
+  }
+  
+ }
+
+     
+   
+
