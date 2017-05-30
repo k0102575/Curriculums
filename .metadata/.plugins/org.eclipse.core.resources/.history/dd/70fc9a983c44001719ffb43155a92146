@@ -1,0 +1,13 @@
+package step21.ex1;
+
+public class Sedan {
+  public void run() {
+    System.out.println("부웅~~ 부드럽게 달린다.");
+  }
+  
+  public void load(Object obj) {
+    System.out.printf("%s를 실었습니다.", obj);
+  }
+  
+  
+}

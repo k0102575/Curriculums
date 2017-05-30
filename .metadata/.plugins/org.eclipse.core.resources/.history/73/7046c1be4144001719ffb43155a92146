@@ -1,0 +1,16 @@
+package step21.ex2;
+
+public class Car {
+
+  protected String model;
+  protected String maker;
+  protected int cc;
+
+  public Car() {
+    super();
+  }
+  
+  public void run() {
+    
+  }
+}

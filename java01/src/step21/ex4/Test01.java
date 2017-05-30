@@ -1,0 +1,22 @@
+/* 추상 메서드 */
+
+package step21.ex4;
+
+public class Test01 {
+
+  public static void main(String[] args) {
+    System.out.println("step21 ex3 Test01 실행중");System.out.println();
+    
+    Truck car1 = new Truck("타이탄", "비트자동차", 10000);
+    
+    car1.load("자갈");
+    car1.run();
+    car1.dump();
+    
+//    추상클래스이다.
+//    Car car2 = new Car(); // 컴파일 오류!
+//    Loader car3 = new Loader(); // 컴파일 오류!
+    
+  }
+
+}

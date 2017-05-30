@@ -1,0 +1,44 @@
+/* JDBC 프로그래밍 : try ~ catch ~ 를 이용하여 자원 해제 시키기 */
+
+package step20;
+
+import java.sql.DriverManager;
+
+public class Test03_1 {
+
+  public static void main(String[] args) throws Exception {
+    System.out.println("step20 Test03_1 실행중");
+    System.out.println();
+    
+    com.mysql.jdbc.Driver mysqlDriver = new com.mysql.jdbc.Driver();
+    
+    DriverManager.registerDriver(mysqlDriver);
+    
+    try {
+      
+      java.sql.Connection con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/webappdb", 
+          "webapp",
+          "1111");
+      
+      java.sql.Statement stmt = con.createStatement();
+      
+      java.sql.ResultSet rs = stmt.executeQuery("select mno, name, tel, email from memb");
+      
+    while (rs.next()) {
+      System.out.printf("%d, %s, %s, %s\n", 
+          rs.getInt("mno"),
+          rs.getString("name"), 
+          rs.getString("tel"), 
+          rs.getString("email"));
+    }
+    
+    rs.close();
+    
+    stmt.close();
+    
+    con.close();
+    
+  }
+
+}

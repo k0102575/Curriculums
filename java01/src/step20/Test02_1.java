@@ -1,4 +1,4 @@
-/* JDBC 프로그래밍 : Statement 객체 */
+/* JDBC 프로그래밍 : Statement 객체 - SELECT문 실행 */
 
 package step20;
 
@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 public class Test02_1 {
 
   public static void main(String[] args) throws Exception {
+    System.out.println("step20 Test02_1 실행중");
+    System.out.println();
     
     // 1) MySQL JDBC 드라이버 관리 객체 생성
     
@@ -27,10 +29,13 @@ public class Test02_1 {
     // 주요함수 
     // executeQuery() : select
     // executeUpdate() : insert, update, delete
+    // executeBatch() : 여러개의 SQL문을 실행할 떄 사용
+    //                  SELECT, INSERT, UPDATE 문을 실행할때 사용
     java.sql.Statement stmt = con.createStatement();
     
     // 5) SELECT SQL문을 DBMS에 보낸다.
-    java.sql.ResultSet rs = stmt.executeQuery("select mno, name, tel, email from memb;");
+    java.sql.ResultSet rs = stmt.executeQuery("select mno, name, tel, email from memb");
+    // sql 날것 그대로 보내는게 아니라 DBMS가 원하는 형태로 파싱해서 보낸다.
     
     // 5) ResultSet 객체를 통해 서버에 결과를 한 개씩 가져온다.
     
@@ -48,7 +53,6 @@ public class Test02_1 {
     stmt.close();
     
     con.close();
-    
     
   }
 

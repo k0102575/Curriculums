@@ -1,0 +1,7 @@
+package step21.ex1;
+
+public class Sedan {
+  public void run() {
+    System.out.println("부웅~~ 부드럽게 달린다.");
+  }
+}

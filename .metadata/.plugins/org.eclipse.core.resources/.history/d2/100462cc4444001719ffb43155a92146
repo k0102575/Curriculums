@@ -1,0 +1,22 @@
+/* 상속을 적응하기
+ * => 상속 기법의 종류
+ * 1) specialization
+ * 
+ * 2) generalization
+ * 
+ */
+
+package step21.ex2;
+
+public class Test01 {
+
+  public static void main(String[] args) {
+    System.out.println("step21 ex2 Test01 실행중");System.out.println();
+    
+    Truck car1 = new Sedan("에쿠스", "현대자동차", 1997, true);
+    
+    car1.load(20);
+    
+  }
+
+}
