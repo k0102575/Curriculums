@@ -1,0 +1,7 @@
+package step21.ex5;
+
+public class Motor {
+  float ampere;
+  
+  
+}

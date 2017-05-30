@@ -1,0 +1,11 @@
+package step22.ex2;
+
+public class Member {
+  int no;
+  String name;
+  String tel;
+  String email;
+  String password;
+  
+  
+}

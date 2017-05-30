@@ -1,0 +1,11 @@
+package step21.ex8;
+
+public class MyClass implements B, C {
+  
+  public void m1() {};
+  
+  public void m2() {};
+  
+  public void m3() {};
+  
+}

@@ -1,0 +1,5 @@
+package step21.ex8;
+
+public interface A {
+  
+}

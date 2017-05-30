@@ -1,0 +1,13 @@
+package step22.ex3;
+
+public class DBConnectionPool {
+  String url;
+  String username;
+  String password;
+  
+  public DBConnectionPool (String url, String username, String password) throws Exception {
+    
+  }
+  
+  
+}

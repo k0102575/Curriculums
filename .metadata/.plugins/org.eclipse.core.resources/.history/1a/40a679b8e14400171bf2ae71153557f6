@@ -1,0 +1,15 @@
+/* 인터페이스 1 */
+
+package step21.ex8;
+
+public interface A {
+  
+  // 1) 규칙이기 떄문에 무조건 공개 메서드이고, 추상 메서드이다.
+  public abstract void m1();
+  
+  // 2) public을 생략해도 내부적으로 public으로 간주한다.
+  abstract void m2();
+  
+  // 3) abstract를 생략해도 내부적으로 abstract로 간주한다.
+  void m3();
+}

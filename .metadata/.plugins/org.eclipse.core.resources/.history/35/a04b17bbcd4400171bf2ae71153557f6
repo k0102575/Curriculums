@@ -1,0 +1,11 @@
+package step21.ex5;
+
+public class CarTester {
+  public void test(Object car) {
+    
+  }
+  
+  
+  
+  
+}

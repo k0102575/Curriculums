@@ -1,0 +1,6 @@
+package step21.ex7;
+
+// 호출자: CarTester
+public interface Vehicle {
+  public abstract void run();
+}

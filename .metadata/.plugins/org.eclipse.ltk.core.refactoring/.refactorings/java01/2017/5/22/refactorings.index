@@ -20,3 +20,22 @@
 1496044366156	Extract superclass 'Loader'
 1496044948686	Copy package
 1496046007348	Copy package
+1496103000203	Copy package
+1496108023958	Copy package
+1496110941850	Copy package
+1496110953768	Delete elements
+1496111280414	Copy compilation unit
+1496111434099	Copy compilation unit
+1496111643810	Copy compilation unit
+1496111797970	Copy compilation unit
+1496112699933	Copy compilation unit
+1496112792245	Copy compilation unit
+1496112964050	Copy compilation unit
+1496113713155	Copy compilation unit
+1496121319645	Copy compilation unit
+1496121721190	Copy compilation unit
+1496121743087	Move compilation unit
+1496122907815	Rename type 'Test06_1'
+1496124765768	Copy compilation units
+1496129679801	Copy package
+1496130117292	Rename compilation unit 'DbConnectionPool.java'

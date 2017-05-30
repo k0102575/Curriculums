@@ -1,0 +1,26 @@
+package step22.ex3;
+
+public class DBConnectionPool {
+  String url;
+  String username;
+  String password;
+  ArrayList<Connection> conList = new ArrayList<>();
+  
+  public DBConnectionPool (String driver, String url, String username, String password) throws Exception {
+    
+    Class.forName(driver);
+    
+    this.url = url;
+    this.username = username;
+    this.password = password;
+  }
+  
+  public Connection getConnection () {
+    
+  }
+  
+  public void returnConnection(Connection con) {
+    
+  }
+  
+}

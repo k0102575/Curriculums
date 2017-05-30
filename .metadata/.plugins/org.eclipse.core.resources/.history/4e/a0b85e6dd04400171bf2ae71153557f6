@@ -1,0 +1,9 @@
+package step21.ex5;
+
+public class Tesla {
+  boolean charge;
+  
+  public void doCharge() {
+    
+  }
+}
