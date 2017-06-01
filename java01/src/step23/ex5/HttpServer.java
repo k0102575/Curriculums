@@ -68,6 +68,12 @@ public class HttpServer {
     System.out.println("step23 ex5");System.out.println();
 
     HttpServer server = new HttpServer(8888);
+    
+    HttpServer server12 = new HttpServer(8888);
+
+    Car car = new car();
+    
+    
     server.listen();
 
   }

@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="package step21.ex5;" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="destory"/>
+			<item value="destory()"/>
 			<item value="package step21.ex5;"/>
 			<item value="CalculatorJob"/>
 			<item value="ChatSite"/>
 			<item value="Input"/>
 			<item value="this"/>
 			<item value="`"/>
-			<item value="Student."/>
-			<item value="m."/>
 		</list>
 		<list key="replacehistory">
 			<item value="ChatServer"/>
