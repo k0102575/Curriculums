@@ -1,0 +1,5 @@
+package step23.ex10;
+
+public interface Command {
+
+}

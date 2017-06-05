@@ -1,0 +1,17 @@
+package tomcat;
+
+public class HttpServer {
+  
+  public HttpServer(int port) {
+    
+  }
+  
+  
+  public void listen() {
+    
+  }
+  
+  public static void main(String[] args) {
+    
+  }
+}

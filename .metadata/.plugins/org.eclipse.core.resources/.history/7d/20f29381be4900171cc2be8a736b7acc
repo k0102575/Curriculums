@@ -1,0 +1,75 @@
+/* 회원 관리 만들기 : 회원 등록하기 */
+
+package step03;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet(urlPatterns="/step03/Servlet04")
+public class Servlet04 extends GenericServlet {
+  
+  private static final long serialVersionUID = 1L;
+  
+  @Override
+  public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+    
+    res.setContentType("text/html;charset=UTF-8");
+    PrintWriter out = res.getWriter();
+    
+    out.println("<!DOCTYPE html>");
+    out.println("<html>");
+    out.println("<head>");
+    out.println("<meta charset='UTF-8'>");
+    out.println("<title>회원관리</title>");
+    out.println("</head>");
+    out.println("<body>");
+    out.println("<h1>회원 조회</h1>");
+    
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    String jdbcUrl = "jdbc:mysql://localhost:3306/webappdb";
+    String jdbcUsername = "webapp";
+    String jdbcPassword = "1111";
+    
+    try {
+    DBConnectionPool conPool = new DBConnectionPool(jdbcDriver, jdbcUrl, jdbcUsername, jdbcPassword);
+    
+    MemberDao memberDao = new MemberDao(conPool);
+    
+    int no = Integer.parseInt(req.getParameter("No"));
+    
+    Member member = memberDao.selectOne(no);
+    if (member == null) {
+      throw new Exception(no + "번 회원을 찾지 못했습니다.");
+    }
+    
+    <form action='Servlet05' method='POST'>
+    이름:<input type='text' name='name' value="%s"><br>
+    이름:<input type='text' name='name' value="%s"><br>
+    전화:<input type='text' name='tel' value="%s"><br>
+    이메일:<input type='text' name='email' value="%s"><br>
+    암호:<input type='password' name='password'><br>
+    <button>등록</button>
+    </form>
+    
+    } catch (Exception e) {
+      out.print("오류 발생!");
+      // pre 태그를 주면은 엔터를 그래도 살린다.
+      out.println("<pre>");
+      e.printStackTrace(out);
+      out.println("</pre>");
+    }
+    
+    out.println("<a href='Servlet02'>목록</a>");
+    out.println("</body>");
+    out.println("</html>");
+    
+    System.out.printf("RemoteAddress: %s\n", req.getRemoteAddr());
+    
+  } // service()
+  
+}

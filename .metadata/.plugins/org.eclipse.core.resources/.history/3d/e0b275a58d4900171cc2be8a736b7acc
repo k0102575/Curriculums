@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> step02.Servlet02 테스트 </h1>
+  
+<h2>GET 요청</h2>
+<a herf="Servlet02?name=aaa&age=20">GET 요청</a>
+
+<h2>POST 요청</h2>
+<form action="Servlet02" method="POST">
+  <button>POST 요청</button>
+</form>
+
+</body>
+</html>

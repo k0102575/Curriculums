@@ -1,0 +1,13 @@
+package step10.ex5;
+
+public class Test01 {
+
+  public static void main(String[] args) {
+    A obj1 = new A();
+    obj1.m1();
+    
+    A obj2 = new B();
+    obj2.m1();
+  }
+
+}

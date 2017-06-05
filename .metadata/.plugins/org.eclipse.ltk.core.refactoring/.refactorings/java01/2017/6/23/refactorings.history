@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;web01/src/step03&apos;&#x0D;&#x0A;- Original project: &apos;java01&apos;&#x0D;&#x0A;- Destination element: &apos;web01/src/step03&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     step22.ex3.MemberDao.java&#x0D;&#x0A;     step22.ex3.DBConnectionPool.java&#x0D;&#x0A;     step22.ex3.Member.java" description="Copy compilation units" destination="=web01/src&lt;step03" element1="/src&lt;step22.ex3{MemberDao.java" element2="/src&lt;step22.ex3{DBConnectionPool.java" element3="/src&lt;step22.ex3{Member.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1496633579434" units="3" version="1.0"/>
+</session>

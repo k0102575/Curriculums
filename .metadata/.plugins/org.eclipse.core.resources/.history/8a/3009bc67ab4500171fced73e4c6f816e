@@ -1,0 +1,8 @@
+package step23.ex9;
+
+public class HttpProcessor {
+  public int port;
+
+  public HttpProcessor() {
+  }
+}

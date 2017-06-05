@@ -1,0 +1,9 @@
+/* 서블릿 만들기 */
+
+package step24;
+
+import javax.servlet.Servlet;
+
+public class HelloServlet implements Servlet {
+
+}
