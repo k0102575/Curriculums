@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="1"/>
 			<item value="step05"/>
 			<item value="destory"/>
 			<item value="destory()"/>
@@ -15,7 +16,6 @@
 			<item value="CalculatorJob"/>
 			<item value="ChatSite"/>
 			<item value="Input"/>
-			<item value="this"/>
 		</list>
 		<list key="replacehistory">
 			<item value="step06"/>

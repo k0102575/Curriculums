@@ -1,8 +1,6 @@
 package bitcamp.java93.domain;
 // 역활: memb 테이블의 값을 보관할 떄 사용할 클래스
 
-
-
 public class Member {
   int no;
   String name;

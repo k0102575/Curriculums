@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
+import bitcamp.java93.dao.CroomDao;
+import bitcamp.java93.dao.LectDao;
+import bitcamp.java93.dao.ManagerDao;
 import bitcamp.java93.dao.MemberDao;
 import bitcamp.java93.util.DBConnectionPool;
 
@@ -26,10 +29,19 @@ public class InitServlet extends HttpServlet {
     DBConnectionPool conPool = new DBConnectionPool(jdbcDriver, jdbcUrl, jdbcUsername, jdbcPassword);
     
     MemberDao memberDao = new MemberDao(conPool);
+    LectDao lectDao = new LectDao(conPool);
+    ManagerDao managerDao = new ManagerDao(conPool);
+    CroomDao croomDao = new CroomDao(conPool);
+    
     
     ServletContext sc = this.getServletContext();
     
     sc.setAttribute("memberDao", memberDao);
+    sc.setAttribute("lectDao", lectDao);
+    sc.setAttribute("croomDao", croomDao);
+    sc.setAttribute("managerDao", managerDao);
+    
+    
     
     } catch (Exception e) {
       e.printStackTrace();
