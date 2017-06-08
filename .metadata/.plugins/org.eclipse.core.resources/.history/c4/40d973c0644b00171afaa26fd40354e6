@@ -1,0 +1,86 @@
+/* 회원 관리 만들기 : 회원 등록하기 */
+package project.croom;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns="/croom/detail")
+public class CroomDetail extends HttpServlet {
+
+  private static final long serialVersionUID = 1L;
+
+  @Override
+  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+    res.setContentType("text/html;charset=UTF-8");
+    PrintWriter out = res.getWriter();
+
+    out.println("<!DOCTYPE html>");
+    out.println("<html>");
+    out.println("<head>");
+    out.println("<meta charset='UTF-8'>");
+    out.println("<title>교실관리</title>");
+    out.println("</head>");
+    out.println("<body>");
+    out.println("<h1>교실 조회</h1>");
+
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    String jdbcUrl = "jdbc:mysql://localhost:3306/webappdb";
+    String jdbcUsername = "webapp";
+    String jdbcPassword = "1111";
+
+    try {
+      DBConnectionPool conPool = new DBConnectionPool(jdbcDriver, jdbcUrl, jdbcUsername, jdbcPassword);
+
+      CroomDao croomDao = new CroomDao(conPool);
+
+      int no = Integer.parseInt(req.getParameter("no"));
+
+      Croom croom = croomDao.selectOne(no);
+      if (croom == null) {
+        throw new Exception(no + "번 회원을 찾지 못했습니다.");
+      }
+
+
+      out.printf("<form action='Servlet05' method='POST'>\n");
+      out.printf("번호:<input type='text' name='no' value='%d' readonly><br>\n", croom.getNo());
+      out.printf("이름:<input type='text' name='name' value='%s'><br>\n", croom.getName());
+      out.println("<button>변경</button>");
+      out.println("<button type='button' onclick='doDelete()'>삭제</button>");
+      out.println("<button type='button' onclick='doList()'>목록</button>");
+      out.println("</form>");
+
+    } catch (Exception e) {
+      out.print("오류 발생!");
+      out.println("<pre>");
+      e.printStackTrace(out);
+      out.println("</pre>");
+      out.println("<a href='list'>목록</a>");
+    }
+
+    out.println("<script>");
+    out.println("function doDelete() {");
+    out.printf("  location.href = 'Servlet06?no=%s'\n", req.getParameter("no"));
+    out.println("}");
+    out.println("</script>");
+    
+    out.println("<script>");
+    out.println("function doList() {");
+    out.println("location.href = 'Servlet02'");
+    out.println("}");
+    out.println("</script>");
+    
+    out.println("</body>");
+    out.println("</html>");
+
+    System.out.printf("RemoteAddress: %s\n", req.getRemoteAddr());
+
+  } // service()
+
+}

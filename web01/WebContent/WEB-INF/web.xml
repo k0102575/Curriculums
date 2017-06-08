@@ -18,6 +18,14 @@
   </servlet>
    -->
    
+  <!--
+  <servlet>
+    <servlet-name>step08.Servlet02</servlet-name>
+    <servlet-class>step08.Servlet02</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  -->
+   
   <!-- 서블릿에 URL을 연결(매핑)한다. -->
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>

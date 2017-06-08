@@ -6,12 +6,12 @@
 	<item value="282" key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_x"/>
 	<item value="0" key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_y"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
-	<item value="10" key="org.eclipse.jdt.uiformatter_page.modify_dialog_tab_page.last_focus_index"/>
+	<item value="3" key="org.eclipse.jdt.uiformatter_page.modify_dialog_tab_page.last_focus_index"/>
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
 	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="0" key="org.eclipse.jdt.uiformatter_page.white_space_tab_page.node"/>
 	<item value="1025" key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_width"/>
-	<item value="863" key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_height"/>
+	<item value="860" key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_height"/>
 	<item value="1" key="org.eclipse.jdt.uiformatter_page.line_wrapping_tab_page.last_category_index"/>
 	<item value="false" key="InstanceOf"/>
 	<item value="0" key="org.eclipse.jdt.uiformatter_page.white_space.java_view.inner"/>
@@ -39,7 +39,7 @@
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
 		<item value="true" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
-		<item value="450" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
+		<item value="500" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH"/>
 		<item value="440" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT"/>
 		<item value="false" key="GoIntoTopLevelTypeAction.isChecked"/>
 		<item value="false" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
@@ -67,11 +67,22 @@
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
 		<item value="false" key="updateSimilarElements"/>
 		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 		<item value="false" key="updateTextualMatches"/>
+	</section>
+	<section name="ProblemSeveritiesConfigurationBlock">
+		<item value="false" key="expanded2"/>
+		<item value="false" key="expanded1"/>
+		<item value="false" key="expanded4"/>
+		<item value="false" key="expanded3"/>
+		<item value="false" key="expanded6"/>
+		<item value="false" key="expanded5"/>
+		<item value="false" key="expanded7"/>
+		<item value="true" key="expanded0"/>
 	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="false" key="OmitCallToSuper"/>
@@ -133,6 +144,11 @@
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
+	</section>
+	<section name="JavaBuildConfigurationBlock">
+		<item value="false" key="expanded2"/>
+		<item value="false" key="expanded1"/>
+		<item value="true" key="expanded0"/>
 	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="true" key="IgnoreDefault"/>

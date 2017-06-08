@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Project</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+  body {
+    text-align: center;
+  }
+
+  .container {
+    border: 1px solid red;
+    width: 600px;
+    margin: 0px auto;
+    position: relative;
+  }
+
+  #sendChat {
+    width: 440px;
+    display: inline-block;
+  }
+
+  #userId, #host, #port{
+    width: 140px;
+    display: inline-block;
+  }
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+<h1>비트 메신저</h1>
+<form class="form-inline" onsubmit="return false;">
+  <div class="form-group">
+    <textarea id="chat" cols="70" rows="20"></textarea></br>
+    <input id="sendChat" type="text" class="form-control">
+    <button id="sendBtn" type="button" class="btn btn-default">보내기</button>
+  </div>
+</form>
+<form class="form-inline" onsubmit="return false;">
+  <div class="form-group">
+    <input type="text" id="userId" class="form-control" placeholder="아이디" value="홍길동">
+    <input type="text" id="host" class="form-control" placeholder="아이피" value="localhost">
+    <input type="text" id="port" class="form-control" placeholder="포트번호" value="8888">
+    <button type="button" id="conBtn" class="btn btn-default">연결</button>
+  </div>
+</form>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- -->

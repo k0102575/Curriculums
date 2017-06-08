@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>강의관리</title>
+</head>
+<body>
+<h1>강의 등록</h1>
+  
+<form action="Servlet03" method="POST">
+타이틀:<input type="text" name="titl"><br>
+설명:<input type="text" name="dscp"><br>
+시작일:<input type="date" name="sdt"><br>
+종료일:<input type="date" name="edt"><br>
+수강가능인원:<input type="text" name="qty"><br>
+가격:<input type="text" name="pric"><br>
+총시간:<input type="text" name="thrs"><br>
+<!--  
+<select name='crmno'>
+<option value='0'>강의실을 선택하세요!</option>
+<option value='1'>강남301</option>
+<option value='2'>강남303</option>
+<option value='3'>강남401</option>
+<option value='4'>강남402</option>
+<option value='5'>강남403</option>
+<option value='6'>강남404</option>
+<option value='7'>강남501</option>
+<option value='8'>강남502</option>
+<option value='9'>강남503</option>
+<option value='10'>강남504</option>
+<option value='11'>강남601</option>
+<option value='12'>강남602</option>
+<option value='13'>강남603</option>
+<option value='14'>강남701</option>
+<option value='15'>종로1</option>
+<option value='16'>종로2</option>
+<option value='17'>종로3</option>
+<option value='18'>종로4</option>
+</select><br>
+<select name='mrno'>
+<option value='0'>매니저를 선택하세요!</option>
+<option value='23'>강사3</option>
+<option value='31'>매니저1</option>
+<option value='32'>매니저2</option>
+<option value='33'>매니저3</option>
+</select><br>
+-->
+<button>등록</button>
+</form>
+
+</body>
+</html>

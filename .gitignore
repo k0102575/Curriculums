@@ -9,4 +9,5 @@
 **/.class
 **/bin/
 **/.classpath
+gradle/
 !build.gradle

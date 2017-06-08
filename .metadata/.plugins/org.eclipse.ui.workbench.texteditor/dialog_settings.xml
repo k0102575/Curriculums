@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="step06" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="step05"/>
 			<item value="destory"/>
 			<item value="destory()"/>
 			<item value="package step21.ex5;"/>
@@ -15,9 +16,9 @@
 			<item value="ChatSite"/>
 			<item value="Input"/>
 			<item value="this"/>
-			<item value="`"/>
 		</list>
 		<list key="replacehistory">
+			<item value="step06"/>
 			<item value="ChatServer"/>
 			<item value="ChatApp"/>
 			<item value="ChatSite"/>
@@ -25,7 +26,6 @@
 			<item value="in"/>
 			<item value="s."/>
 			<item value="this."/>
-			<item value="Member m"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
