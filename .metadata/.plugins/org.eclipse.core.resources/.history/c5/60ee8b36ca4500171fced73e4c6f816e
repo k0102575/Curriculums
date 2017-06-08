@@ -1,5 +1,0 @@
-package step23.ex12;
-
-public @interface WebServlet {
-
-}

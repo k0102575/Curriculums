@@ -1,7 +1,0 @@
-package web01;
-
-import javax.servlet.Servlet;
-
-public class HelloServlet implements Servlet{
-  
-}

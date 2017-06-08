@@ -1,8 +1,0 @@
-package step10.ex5;
-
-public class B {
-  public void m1() {
-    
-  }
-  
-}

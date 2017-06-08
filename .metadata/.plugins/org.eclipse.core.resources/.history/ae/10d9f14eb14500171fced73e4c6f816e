@@ -1,5 +1,0 @@
-package step23.ex10;
-
-public class HelloServlet implements Command {
-
-}

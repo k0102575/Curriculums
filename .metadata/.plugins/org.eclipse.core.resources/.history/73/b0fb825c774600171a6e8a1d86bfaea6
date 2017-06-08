@@ -1,5 +1,0 @@
-package step10.ex5;
-
-public class C extends B{
-
-}
