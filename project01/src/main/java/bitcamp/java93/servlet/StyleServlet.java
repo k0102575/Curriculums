@@ -21,6 +21,7 @@ public class StyleServlet extends HttpServlet {
   public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     PrintWriter out = res.getWriter();
     
+    
     out.println("<style>");
     out.println("address {");
     out.println("  display: inline-block;");
@@ -30,6 +31,7 @@ public class StyleServlet extends HttpServlet {
     out.println("  background-color: gray;");
     out.println("  color: white;");
     out.println("  margin: 10px;");
+    out.println("margin-left : 0px;");
     out.println("  padding: 10px;");
     out.println("  text-align: center;");
     out.println("}");

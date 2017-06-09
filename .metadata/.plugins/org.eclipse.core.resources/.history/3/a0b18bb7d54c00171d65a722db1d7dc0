@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step11</title>
+</head>
+<body>
+<h1>GET 테스트</h1>
+  
+<a href="Servlet01">Servlet01</a><br>
+<a href="Servlet02">Servlet02</a><br>
+  
+<h1>POST 테스트</h1>  
+  
+  
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* 웹 애플리케이션 구성 요소 */
+
+package step09;
+
+import javax.servlet.ServletRequestAttributeEvent;
+import javax.servlet.ServletRequestAttributeListener;
+import javax.servlet.ServletRequestEvent;
+import javax.servlet.annotation.WebListener;
+
+@WebListener
+public class Listener03 implements ServletRequestAttributeListener {
+
+  @Override
+  public void requestDestroyed(ServletRequestEvent sre) {
+    System.out.println("======>Listener02.requestDestroyed()");
+  }
+
+  @Override
+  public void requestInitialized(ServletRequestEvent sre) {
+    System.out.println("======>Listener02.requestInitialized()");
+    
+  }
+
+  @Override
+  public void attributeAdded(ServletRequestAttributeEvent srae) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void attributeRemoved(ServletRequestAttributeEvent srae) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void attributeReplaced(ServletRequestAttributeEvent srae) {
+    // TODO Auto-generated method stub
+    
+  }
+  
+  
+  
+  
+  
+  
+}

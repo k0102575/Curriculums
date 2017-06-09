@@ -1,0 +1,10 @@
+/* 애노테이션 사용하기 : 배열 값 설정하기 */
+
+package step25;
+
+//@Annotation05
+@Annotation05(v1 = { "" }, v2 = { "" }, v3 = { "" }, v4 = { 0 }, v5 = { 0 }, v6 = { 0 })
+
+public class Class03 {
+
+}

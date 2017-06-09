@@ -20,7 +20,6 @@ public class LectUpdateServlet extends HttpServlet {
 
   @Override
   public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    req.setCharacterEncoding("UTF-8");
     Lect l = new Lect();
     
     l.setNo(Integer.parseInt(req.getParameter("no")));

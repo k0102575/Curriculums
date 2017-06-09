@@ -21,7 +21,6 @@ public class CroomUpdateServlet extends HttpServlet {
 
   @Override
   public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    req.setCharacterEncoding("UTF-8");
     Croom c = new Croom();
     
     c.setNo(Integer.parseInt(req.getParameter("no")));

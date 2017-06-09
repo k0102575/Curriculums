@@ -30,3 +30,9 @@
 1496913389172	Move compilation unit
 1496913393441	Delete element
 1496913394588	Delete element
+1496970550724	Delete element
+1496989085289	Copy file
+1496989087939	Move 'login.html' to 'auth'
+1496989535192	Copy compilation unit
+1496989585982	Rename type 'MemberAuthServlet'
+1496989615807	Rename type 'MemberLoginServlet'

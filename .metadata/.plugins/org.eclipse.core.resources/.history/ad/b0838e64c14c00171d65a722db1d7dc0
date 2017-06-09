@@ -1,0 +1,18 @@
+package step25;
+
+public class Test01 {
+
+  public static void main(String[] args) throws Exception {
+    
+    // 방법1)
+//    Class clazz = Class.forName("step25.Class01");
+    
+    // 방법2)
+    Class clazz = Class.forName("step25.Class01");
+
+    
+    
+    
+  }
+
+}

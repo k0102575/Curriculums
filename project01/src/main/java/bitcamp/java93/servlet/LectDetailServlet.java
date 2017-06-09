@@ -45,7 +45,6 @@ public class LectDetailServlet extends HttpServlet {
   
       int no = Integer.parseInt(req.getParameter("no"));
       
-
       Lect lect = lectDao.selectOne(no);
       
       List<Croom> croom = croomDao.selectList();

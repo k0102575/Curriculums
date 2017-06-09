@@ -22,14 +22,12 @@ public class CroomAddServlet extends HttpServlet {
   
   @Override
   public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    req.setCharacterEncoding("UTF-8");
     Croom c = new Croom();
     
     c.setName(req.getParameter("name"));
     
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
-    
     
     try {
       CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");

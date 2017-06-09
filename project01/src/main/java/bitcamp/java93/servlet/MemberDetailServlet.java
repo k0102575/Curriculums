@@ -21,8 +21,8 @@ public class MemberDetailServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   @Override
-  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
+  public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 
@@ -37,6 +37,9 @@ public class MemberDetailServlet extends HttpServlet {
     
     out.println("</head>");
     out.println("<body>");
+    Member loginMember = (Member) this.getServletContext().getAttribute("id_" + req.getParameter("sessionId"));
+    out.printf("<p>%s(%s)</p>\n", loginMember.getName(), loginMember.getEmail());
+
     out.println("<h1>회원 조회</h1>");
 
     try {
@@ -48,7 +51,7 @@ public class MemberDetailServlet extends HttpServlet {
       if (member == null) {
         throw new Exception(no + "번 회원을 찾지 못했습니다.");
       }
-
+      
       out.printf("<form action='update' method='POST'>\n");
       out.printf("번호:<input type='text' name='no' value='%d' readonly><br>\n", member.getNo());
       out.printf("이름:<input type='text' name='name' value='%s'><br>\n", member.getName());

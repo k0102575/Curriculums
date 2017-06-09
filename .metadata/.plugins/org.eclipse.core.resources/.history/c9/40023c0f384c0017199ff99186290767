@@ -1,0 +1,44 @@
+package bitcamp.java93.servlet;
+/* 웹 페이지의 CSS 스타일코드를 출력하는 서블릿 */
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns="/style/core")
+public class StyleServlet extends HttpServlet {
+
+  private static final long serialVersionUID = 1L;
+
+  @Override
+  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    PrintWriter out = res.getWriter();
+    
+    
+    out.println("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>");
+    out.println("<style>");
+    out.println("address {");
+    out.println("  display: inline-block;");
+    out.println("}");
+    out.println("body {");
+    
+    out.println(".footer {");
+    out.println("  background-color: gray;");
+    out.println("  color: white;");
+    out.println("  margin: 10px;");
+    out.println("  padding: 10px;");
+    out.println("  text-align: center;");
+    out.println("}");
+    out.println("</style>");
+    
+    
+  } // service()
+
+}
