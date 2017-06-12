@@ -1,8 +1,6 @@
 package bitcamp.java93.servlet;
 /* 회원 관리 만들기 : 회원 삭제하기 */
 
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 

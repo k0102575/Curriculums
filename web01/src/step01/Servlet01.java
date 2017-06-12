@@ -1,6 +1,23 @@
-/* 웹 애플리케이션 컴포넌트  - 서블릿 만들기 I 
+/* 웹 애플리케이션 컴포넌트  - 서블릿 만들기 I - Servlet 인터페이스
+ * => 웹 애플리케이션을 구성하는 있는 구성 요소를 말한다.
+ * 1) 서블릿
+ *    - 클라이언트의 요청을 처리한다.
+ * 2) 필터
+ *    - 서블릿을 실행하기 전이나 후에 작업을 수행한다.
+ * 3) 리스너
+ *    - 서블릿 컨테이너의 특정 상황(event)에서 작업하는 객체
+ *      그 객체를 "리스너(listener)"라 부른다.
  * 
- * 기본 서블릿 인터페이스를 implements 하는 클래스
+ * 서블릿 만들기
+ * 1) javax.servlet.Servlet 인터페이스를 구현하는 방법
+ * 2) javax.servlet.GenericServlet 클래스를 상속 받는 방법
+ * 3) javax.servlet.http.HttpServlet 클래스를 상속 받는 방법
+ * 
+ * 서블릿을 실행하려면 서블릿 컨테이너에 등록해야 한다.
+ * 1) web.xml (DD file)에 서블릿 정보를 등록
+ *  예) HelloServlet 클래스
+ * 2) @WebServlet 애노테이션을 붙여 서블릿 정보를 등록
+ *  예) Servlet01 클래스
  * 
  * */
 
@@ -27,7 +44,7 @@ import javax.servlet.annotation.WebServlet;
 // 4) urlPatterns 대신 value 속성에 지정해도 된다. 두 개의 속성은 같은 역활을 한다.
 //@WebServlet(value="/step01/Servlet01")
 
-// 5) value 속성으로 URL을 지정할 경우, value 이름을 생략할 수 있따.
+// 5) value 속성으로 URL을 지정할 경우, value 이름을 생략할 수 있다.
 @WebServlet("/step01/Servlet01")
 
 //@WebServlet("/step01/Servlet01", loadOnStartup=1)

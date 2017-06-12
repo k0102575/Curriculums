@@ -4,6 +4,7 @@ package bitcamp.java93.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,7 @@ public class LectDeleteServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   @Override
-  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
@@ -28,6 +29,10 @@ public class LectDeleteServlet extends HttpServlet {
     out.println("<head>");
     out.println("<meta charset='UTF-8'>");
     out.println("<title>강의관리</title>");
+    
+    RequestDispatcher rd = req.getRequestDispatcher("/style/core");
+    rd.include(req, res);
+    
     out.println("</head>");
     out.println("<body>");
     out.println("<h1>강의 삭제</h1>");
@@ -35,8 +40,6 @@ public class LectDeleteServlet extends HttpServlet {
 
     try {
       LectDao lectDao = (LectDao) this.getServletContext().getAttribute("lectDao");
-
-      System.out.println(req.getParameter("no"));
 
       int no = Integer.parseInt(req.getParameter("no"));
 
@@ -49,12 +52,15 @@ public class LectDeleteServlet extends HttpServlet {
       res.setHeader("Refresh", "1;url=list");
       
     } catch (Exception e) {
-      out.print("오류 발생!");
-      out.println("<pre>");
-      e.printStackTrace(out);
-      out.println("</pre>");
-      out.println("<a href='list'>목록</a>");
+      req.setAttribute("error", e);
+      rd = req.getRequestDispatcher("/error");
+      rd.forward(req, res);
+      return;
     }
+    
+    rd = req.getRequestDispatcher("/footer");
+    rd.include(req, res);
+    
 
     out.println("</body>");
     out.println("</html>");

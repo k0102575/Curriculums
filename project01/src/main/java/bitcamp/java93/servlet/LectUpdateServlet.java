@@ -4,6 +4,7 @@ package bitcamp.java93.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,9 +20,9 @@ public class LectUpdateServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   @Override
-  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     Lect l = new Lect();
-    
+
     l.setNo(Integer.parseInt(req.getParameter("no")));
     l.setTitl(req.getParameter("titl"));
     l.setDscp(req.getParameter("dscp"));
@@ -32,9 +33,10 @@ public class LectUpdateServlet extends HttpServlet {
     l.setThrs(Integer.parseInt(req.getParameter("thrs")));
     l.setCrmno(Integer.parseInt(req.getParameter("crmno")));
     l.setMrno(Integer.parseInt(req.getParameter("mrno")));
-    
+
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
+
 
     out.println("<!DOCTYPE html>");
     out.println("<html>");
@@ -42,6 +44,10 @@ public class LectUpdateServlet extends HttpServlet {
     out.println("<meta charset='UTF-8'>");
     out.println("<title>강의관리</title>");
     out.println("</head>");
+
+    RequestDispatcher rd = req.getRequestDispatcher("/style/core");
+    rd.include(req, res);
+
     out.println("<body>");
     out.println("<h1>강의 변경</h1>");
 
@@ -56,14 +62,16 @@ public class LectUpdateServlet extends HttpServlet {
       }
       out.println("<p>변경 성공 입니다.</p>");
       res.setHeader("Refresh", "1;url=list");
-      
+
     } catch (Exception e) {
-      out.print("오류 발생!");
-      out.println("<pre>");
-      e.printStackTrace(out);
-      out.println("</pre>");
-      out.println("<a href='list'>목록</a>");
+      req.setAttribute("error", e);
+      rd = req.getRequestDispatcher("/error");
+      rd.forward(req, res);
+      return;
     }
+
+    rd = req.getRequestDispatcher("/footer");
+    rd.include(req, res);
 
     out.println("</body>");
     out.println("</html>");

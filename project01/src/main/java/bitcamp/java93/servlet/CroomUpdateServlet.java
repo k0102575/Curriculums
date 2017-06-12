@@ -20,7 +20,7 @@ public class CroomUpdateServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   @Override
-  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     Croom c = new Croom();
     
     c.setNo(Integer.parseInt(req.getParameter("no")));
@@ -29,11 +29,16 @@ public class CroomUpdateServlet extends HttpServlet {
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
 
+
     out.println("<!DOCTYPE html>");
     out.println("<html>");
     out.println("<head>");
     out.println("<meta charset='UTF-8'>");
     out.println("<title>교실관리</title>");
+    
+    RequestDispatcher rd = req.getRequestDispatcher("/style/core");
+    rd.include(req, res);
+    
     out.println("</head>");
     out.println("<body>");
     out.println("<h1>교실 변경</h1>");
@@ -51,16 +56,18 @@ public class CroomUpdateServlet extends HttpServlet {
       
     } catch (Exception e) {
       req.setAttribute("error", e);
-      RequestDispatcher  rd = req.getRequestDispatcher("/croom/error");
+      rd = req.getRequestDispatcher("/croom/error");
       rd.forward(req, res);
       
       return;
     }
+    
+    rd = req.getRequestDispatcher("/footer");
+    rd.include(req, res);
 
     out.println("</body>");
     out.println("</html>");
 
-    System.out.printf("RemoteAddress: %s\n", req.getRemoteAddr());
 
   } // service()
 

@@ -30,8 +30,6 @@ public class MemberAddServlet extends HttpServlet {
     m.setEmail(req.getParameter("email"));
     m.setPassword(req.getParameter("password"));
 
-
-
     try {
       //      ServletContext sc = this.getServletContext();
       //      MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
@@ -44,7 +42,6 @@ public class MemberAddServlet extends HttpServlet {
       req.setAttribute("error", e);
       RequestDispatcher rd = req.getRequestDispatcher("/error");
       rd.forward(req, res);
-
       return;
     }
     

@@ -1,8 +1,8 @@
 package bitcamp.java93.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +18,7 @@ public class LectAddServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
   
   @Override
-  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     Lect l = new Lect();
     
     l.setTitl(req.getParameter("titl"));
@@ -31,39 +31,19 @@ public class LectAddServlet extends HttpServlet {
     l.setCrmno(Integer.parseInt(req.getParameter("crmno")));
     l.setMrno(Integer.parseInt(req.getParameter("mrno")));
     
-    res.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = res.getWriter();
-    
-    out.println("<!DOCTYPE html>");
-    out.println("<html>");
-    out.println("<head>");
-    out.println("<meta charset='UTF-8'>");
-    out.println("<title>강의관리</title>");
-    out.println("</head>");
-    out.println("<body>");
-    out.println("<h1>강의 등록</h1>");
-    
-    
     try {
       LectDao lectDao = (LectDao) this.getServletContext().getAttribute("lectDao");
     
     lectDao.insert(l);
-    out.println("<p>등록 성공 입니다.</p>");
     
     res.sendRedirect("list");
     
     } catch (Exception e) {
-      out.print("오류 발생!");
-      out.println("<pre>");
-      e.printStackTrace(out);
-      out.println("</pre>");
+      req.setAttribute("error", e);
+      RequestDispatcher rd = req.getRequestDispatcher("/error");
+      rd.forward(req, res);
+      return;
     }
-    
-    out.println("<a href='list'>목록</a>");
-    out.println("</body>");
-    out.println("</html>");
-    
-    System.out.printf("RemoteAddress: %s\n", req.getRemoteAddr());
     
   } // service()
   

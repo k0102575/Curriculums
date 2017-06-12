@@ -93,7 +93,6 @@ public class MemberListServlet extends HttpServlet {
     out.println("</body>");
     out.println("</html>");
 
-    System.out.printf("RemoteAddress: %s\n", req.getRemoteAddr());
 
   } // service()
 

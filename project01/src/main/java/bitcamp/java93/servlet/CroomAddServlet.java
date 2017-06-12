@@ -3,7 +3,6 @@
 package bitcamp.java93.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,13 +20,11 @@ public class CroomAddServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
   
   @Override
-  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+  public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     Croom c = new Croom();
     
     c.setName(req.getParameter("name"));
     
-    res.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = res.getWriter();
     
     try {
       CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
@@ -39,17 +36,11 @@ public class CroomAddServlet extends HttpServlet {
     
     } catch (Exception e) {
       req.setAttribute("error", e);
-      RequestDispatcher  rd = req.getRequestDispatcher("/croom/error");
+      RequestDispatcher  rd = req.getRequestDispatcher("/error");
       rd.forward(req, res);
       
       return;
     }
-    
-    out.println("<a href='list'>목록</a>");
-    out.println("</body>");
-    out.println("</html>");
-    
-    System.out.printf("RemoteAddress: %s\n", req.getRemoteAddr());
     
   } // service()
   
