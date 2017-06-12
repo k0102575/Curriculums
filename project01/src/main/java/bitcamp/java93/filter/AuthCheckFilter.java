@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bitcamp.java93.domain.Member;
 
-@WebFilter("/member/*")
+@WebFilter({"/member/*", "/croom/*", "/lect/*"})
 public class AuthCheckFilter implements Filter{
 
   @Override
@@ -30,21 +30,14 @@ public class AuthCheckFilter implements Filter{
     HttpServletRequest httpRequest = (HttpServletRequest) request;
     HttpServletResponse httpResponse = (HttpServletResponse) response;
     
-    String sessionId = httpRequest.getParameter("sessionId");
-
-    if (sessionId == null) {
-      httpResponse.sendRedirect("../auth/login.html");
+    Member loginMember = (Member) httpRequest.getSession().getAttribute("loginMember");
+    
+    if (loginMember == null) {
+      httpResponse.sendRedirect("../auth/login");
       return;
     }
     
-    Member loginmember = (Member) request.getServletContext().getAttribute("id_" + sessionId);
-    
-    if (loginmember == null) {
-      httpResponse.sendRedirect("../auth/login.html");
-      return;
-    }
-    
-    chain.doFilter(httpRequest, httpResponse);
+    chain.doFilter(request, response);
   }
 
   @Override

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\Bitcamp\git\java93\project01-bit"/>
+		<item value="C:\Users\Bitcamp\git\java93\web01-bit"/>
 		<item value="C:\workspace\project01"/>
 		<item value="C:\workspace"/>
 		<item value="C:\workspace\java01"/>

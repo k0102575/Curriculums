@@ -1,7 +1,0 @@
-/* 로그인 여부를 검사하는 필터 */
-
-package bitcamp.java93.filter;
-
-public class AuthCheckFilter {
-
-}
