@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="croomDao" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="memberDao"/>
+			<item value="Dao"/>
+			<item value="Teacher"/>
+			<item value="teacher"/>
+			<item value="teacherDao"/>
 			<item value="1"/>
 			<item value="step05"/>
 			<item value="destory"/>
-			<item value="destory()"/>
-			<item value="package step21.ex5;"/>
-			<item value="CalculatorJob"/>
-			<item value="ChatSite"/>
-			<item value="Input"/>
 		</list>
 		<list key="replacehistory">
+			<item value="croomDao"/>
+			<item value="Service"/>
+			<item value="Member"/>
+			<item value="member"/>
+			<item value="memberDao"/>
 			<item value="step06"/>
 			<item value="ChatServer"/>
 			<item value="ChatApp"/>
-			<item value="ChatSite"/>
-			<item value="Output"/>
-			<item value="in"/>
-			<item value="s."/>
-			<item value="this."/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -10,6 +10,8 @@ import bitcamp.java93.dao.LectDao;
 import bitcamp.java93.dao.ManagerDao;
 import bitcamp.java93.dao.MemberDao;
 import bitcamp.java93.dao.TeacherDao;
+import bitcamp.java93.service.CroomService;
+import bitcamp.java93.service.MemberService;
 import bitcamp.java93.service.TeacherService;
 import bitcamp.java93.util.DBConnectionPool;
 
@@ -34,6 +36,12 @@ public class ContextLoaderListener implements ServletContextListener{
     CroomDao croomDao = new CroomDao(conPool);
     TeacherDao teacherDao = new TeacherDao(conPool);
     
+    MemberService memberService = new MemberService();
+    memberService.setMemberDao(memberDao);
+    
+    CroomService croomService = new CroomService();
+    croomService.setCroomDao(croomDao);
+    
     TeacherService teacherService = new TeacherService();
     teacherService.setMemberDao(memberDao);
     teacherService.setTeacherDao(teacherDao);
@@ -42,8 +50,8 @@ public class ContextLoaderListener implements ServletContextListener{
     ServletContext sc = sce.getServletContext();
     
     sc.setAttribute("teacherService", teacherService);
+    sc.setAttribute("memberService", memberService);
     
-    sc.setAttribute("memberDao", memberDao);
     sc.setAttribute("lectDao", lectDao);
     sc.setAttribute("croomDao", croomDao);
     sc.setAttribute("managerDao", managerDao);

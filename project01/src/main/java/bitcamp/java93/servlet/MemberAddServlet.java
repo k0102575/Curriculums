@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.MemberDao;
 import bitcamp.java93.domain.Member;
+import bitcamp.java93.service.MemberService;
 
 @WebServlet(urlPatterns="/member/add")
 public class MemberAddServlet extends HttpServlet {
@@ -31,11 +31,9 @@ public class MemberAddServlet extends HttpServlet {
     m.setPassword(req.getParameter("password"));
 
     try {
-      //      ServletContext sc = this.getServletContext();
-      //      MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
-      MemberDao memberDao = (MemberDao) this.getServletContext().getAttribute("memberDao");
+      MemberService memberService = (MemberService) this.getServletContext().getAttribute("memberService");
       
-      memberDao.insert(m);
+      memberService.add(m);
       
       res.sendRedirect("list");
     } catch (Exception e) {

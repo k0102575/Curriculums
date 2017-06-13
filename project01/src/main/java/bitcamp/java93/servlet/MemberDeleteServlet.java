@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.MemberDao;
+import bitcamp.java93.service.MemberService;
 
 @WebServlet(urlPatterns="/member/delete")
 public class MemberDeleteServlet extends HttpServlet {
@@ -38,14 +38,11 @@ public class MemberDeleteServlet extends HttpServlet {
     out.println("<h1>회원 삭제</h1>");
     
     try {
-      MemberDao memberDao = (MemberDao) this.getServletContext().getAttribute("memberDao");
+      MemberService memberService = (MemberService) this.getServletContext().getAttribute("memberService");
       
       int no = Integer.parseInt(req.getParameter("no"));
-
-      int count = memberDao.delete(no);
-      if (count < 1) {
-        throw new Exception(no + "번 회원을 찾지 못했습니다.");
-      }
+      
+      memberService.remove(no);
       
       out.println("<p>삭제 성공 입니다.</p>");
       

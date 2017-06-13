@@ -1,7 +1,0 @@
-package bitcamp.java93.service;
-
-public class TeacherService {
-  
-  MemberDao memberDao;
-  TehcarDao teacherDao;
-}

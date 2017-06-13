@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.MemberDao;
 import bitcamp.java93.domain.Member;
+import bitcamp.java93.service.MemberService;
 
 @WebServlet(urlPatterns="/member/detail")
 public class MemberDetailServlet extends HttpServlet {
@@ -44,14 +44,11 @@ public class MemberDetailServlet extends HttpServlet {
     out.println("<h1>회원 조회</h1>");
 
     try {
-      MemberDao memberDao = (MemberDao) this.getServletContext().getAttribute("memberDao");
+      MemberService memberService = (MemberService) this.getServletContext().getAttribute("memberService");
 
       int no = Integer.parseInt(req.getParameter("no"));
 
-      Member member = memberDao.selectOne(no);
-      if (member == null) {
-        throw new Exception(no + "번 회원을 찾지 못했습니다.");
-      }
+      Member member = memberService.get(no);
       
       out.printf("<form action='update' method='POST'>\n");
       out.printf("번호:<input type='text' name='no' value='%d' readonly><br>\n", member.getNo());

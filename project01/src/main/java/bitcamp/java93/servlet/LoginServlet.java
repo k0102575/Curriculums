@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bitcamp.java93.dao.MemberDao;
 import bitcamp.java93.domain.Member;
+import bitcamp.java93.service.MemberService;
 
 @WebServlet(urlPatterns="/auth/login")
 public class LoginServlet extends HttpServlet {
@@ -76,9 +76,8 @@ public class LoginServlet extends HttpServlet {
 
     try {
 
-      MemberDao memberDao = (MemberDao) this.getServletContext().getAttribute("memberDao");
-
-      Member member = memberDao.selectOneByEmailPassword(email, password);
+      MemberService memberService = (MemberService)this.getServletContext().getAttribute("memberService");      
+      Member member = memberService.check(email, password);
 
       if (member != null) {
         
