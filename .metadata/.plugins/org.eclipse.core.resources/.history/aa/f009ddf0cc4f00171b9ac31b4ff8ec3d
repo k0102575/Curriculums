@@ -1,0 +1,7 @@
+package step13;
+
+import javax.servlet.http.HttpServlet;
+
+public class Servlet01 extends HttpServlet {
+
+}

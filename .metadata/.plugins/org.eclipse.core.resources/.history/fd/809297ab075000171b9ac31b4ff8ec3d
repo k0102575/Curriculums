@@ -1,0 +1,11 @@
+package bitcamp.java93.service;
+
+import bitcamp.java93.dao.MemberDao;
+
+public class TeacherService {
+  
+  MemberDao memberDao;
+  teacherDao teacherDao;
+  
+  
+}
