@@ -1,0 +1,63 @@
+package bitcamp.java93.servlet;
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+
+import bitcamp.java93.domain.Teacher;
+import bitcamp.java93.service.TeacherService;
+import bitcamp.java93.util.MultiPartFormProcessor;
+
+@WebServlet(urlPatterns="/teacher/add")
+public class TeacherAddServlet extends HttpServlet {
+
+  private static final long serialVersionUID = 1L;
+
+  @Override
+  public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    try {
+      Map<String, FileItem> partMap = MultiPartFormProcessor.parse(req);
+      
+      Teacher t = new Teacher();
+      
+      t.setName(partMap.get("name").getString("UTF-8"));
+      t.setTel(partMap.get("tel"));
+      t.setEmail(partMap.get("email"));
+      t.setPassword(partMap.get("password"));
+      t.setHomepage(partMap.get("homepage"));
+      t.setFacebook(partMap.get("facebook"));
+      t.setTwitter(partMap.get("twitter"));
+
+    }
+     catch (Exception e){
+      req.setAttribute("error", e);
+      RequestDispatcher rd = req.getRequestDispatcher("/error");
+      rd.forward(req, res);
+      return;
+    }
+
+
+    try {
+      TeacherService teacherService = (TeacherService) this.getServletContext().getAttribute("teacherService");
+
+      teacherService.add(t);
+
+      res.sendRedirect("list");
+    } catch (Exception e) {
+      req.setAttribute("error", e);
+      RequestDispatcher rd = req.getRequestDispatcher("/error");
+      rd.forward(req, res);
+      return;
+    }
+
+  } // service()
+
+}

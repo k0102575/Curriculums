@@ -1,8 +1,6 @@
 package bitcamp.java93.servlet;
 /* 웹 페이지의 CSS 스타일코드를 출력하는 서블릿 */
 
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 

@@ -26,12 +26,15 @@ public class TeacherService {
   
   public Teacher get(int no) throws Exception {
     
-    return teacherDao.selectOne(no);
+    Teacher teacher = teacherDao.selectOne(no);
+    teacher.setPhotoList(teacherDao.selectPhotoList(no));
+    return teacher;
   } // get()
   
   public void add(Teacher teacher) throws Exception {
     memberDao.insert(teacher);
     teacherDao.insert(teacher);
+    teacherDao.insertPhoto(teacher.getNo(), teacher.getPhotoList());
   }  // add()
   
   public void update(Teacher teacher) throws Exception {
@@ -46,9 +49,15 @@ public class TeacherService {
       throw new Exception(teacher.getNo() + "번 회원을 변경하지 못했습니다.");
     }
     
+    teacherDao.deletePhoto(teacher.getNo());
+    
+    teacherDao.insertPhoto(teacher.getNo(), teacher.getPhotoList());
+    
   }  // update()
    
   public void remove(int no) throws Exception {
+    teacherDao.deletePhoto(no);
+    
     int count = teacherDao.delete(no);
     
     if (count < 1) {

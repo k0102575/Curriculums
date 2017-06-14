@@ -18,7 +18,6 @@ public class TeacherDao {
 
   public List<Teacher> selectList(int pageNo, int pageSize) throws Exception {
     Connection con = conPool.getConnection();
-    // connection을 닫지 않기 위해 try문 안에 넣지 않는다.
 
     try (
         PreparedStatement stmt = con.prepareStatement(
@@ -144,7 +143,7 @@ public class TeacherDao {
     try (
         PreparedStatement stmt = con.prepareStatement
         ("select m.mno, m.name, m.tel, m.email, t.hmpg, t.fcbk, t.twit " +
-         " from tcher t inner join memb m on t.tno=m.mno ");
+            " from tcher t inner join memb m on t.tno=m.mno ");
         ) {
 
       stmt.setString(1, email);
@@ -173,5 +172,62 @@ public class TeacherDao {
     }
 
   } // selectOneByEmailPassword()
+
+  public void insertPhoto(int no, List<String> photoList) throws Exception {
+    Connection con = conPool.getConnection();
+    try(
+        PreparedStatement stmt = con.prepareStatement(
+            "insert into tch_phot(tno, path) values(?,?)");
+        ) {
+      for (String path : photoList) {
+        stmt.setInt(1, no);
+        stmt.setString(2, path);
+        stmt.executeUpdate();
+      }
+
+    } finally {
+      conPool.returnConnection(con);
+    }
+
+  } // insertPhoto()
+
+  public List<String> selectPhotoList(int teacherNo) throws Exception {
+    Connection con = conPool.getConnection();
+    try (
+        PreparedStatement stmt = con.prepareStatement(
+            "select path from tch_phot where tno=?");
+        ) {
+      stmt.setInt(1, teacherNo);
+
+      ArrayList<String> list = new ArrayList<>();
+      try(ResultSet rs = stmt.executeQuery();) {
+
+        while (rs.next()) {
+          list.add(rs.getString("path"));
+        } // while
+
+      } // try
+      
+      return list;
+    
+    } finally {
+      conPool.returnConnection(con);
+    }
+
+  } // selectPhotoList()
+  
+  public void deletePhoto(int teacherNo) throws Exception {
+    Connection con = conPool.getConnection();
+    try(
+        PreparedStatement stmt = con.prepareStatement("delete from tch_phot where tno=?");
+        ) {
+      stmt.setInt(1, teacherNo);
+      stmt.executeUpdate();
+
+    } finally {
+      conPool.returnConnection(con);
+    }
+
+  } // deletePhoto()
 
 }

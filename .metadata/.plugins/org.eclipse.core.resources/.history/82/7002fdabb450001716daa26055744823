@@ -1,0 +1,13 @@
+package bitcamp.java93.util;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.fileupload.FileItem;
+
+public class MultiPartFormProcessor {
+  public static Map<String,FileItem> parse(HttpServletRequest request) throws Exception {
+    
+  }
+}
