@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.CroomDao;
 import bitcamp.java93.domain.Croom;
+import bitcamp.java93.service.CroomService;
 
 @WebServlet(urlPatterns="/croom/list")
 public class CroomListServlet extends HttpServlet {
@@ -36,61 +36,23 @@ public class CroomListServlet extends HttpServlet {
     } catch (Exception e) {}
     
     res.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = res.getWriter();
-    
-    out.println("<!DOCTYPE html>");
-    out.println("<html>");
-    out.println("<head>");
-    out.println("<meta charset='UTF-8'>");
-    out.println("<title>교실관리</title>");
-    
-    RequestDispatcher rd = req.getRequestDispatcher("/style/core");
-    rd.include(req, res);
-    
-    out.println("</head>");
-    out.println("<body>");
-    
-    rd = req.getRequestDispatcher("/header");
-    rd.include(req, res);
-    
-    out.println("<h1>교실 목록</h1>");
-    
-    
     try {
-      CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
-    
-    List<Croom> list = croomDao.selectList(pageNo, pageSize);
-    
-    out.println("<a href='form'>새교실</a><br>");
-    
-    out.println("<table border='1'>");
-    out.println("<thead>");
-    out.println("<tr><th>번호</th><th>이름</th></tr>");
-    out.println("<tbody>");
-    
-    for (Croom c : list) {
-      out.println("<tr>");
-      out.printf("<td>%d</td>", c.getNo());
-      out.printf("<td><a href='detail?no=%d'>%s</a></td>" ,c.getNo(), c.getName());
-      out.println("</tr>");
+      CroomService croomService = (CroomService) this.getServletContext().getAttribute("croomService");
       
-    }
-    out.println("</tbody>");
-    out.println("</table>");
+    List<Croom> list = croomService.list(pageNo, pageSize);
+    
+    req.setAttribute("list", list);
+    
+    RequestDispatcher rd = req.getRequestDispatcher("/croom/list.jsp");
+    rd.include(req, res);
     
     } catch (Exception e){
       req.setAttribute("error", e);
-      rd = req.getRequestDispatcher("/error");
+      RequestDispatcher rd = req.getRequestDispatcher("/error");
       rd.forward(req, res);
       
       return;
     }
-    
-    rd = req.getRequestDispatcher("/footer");
-    rd.include(req, res);
-    
-    out.println("</body>");
-    out.println("</html>");
     
     
   } // service()

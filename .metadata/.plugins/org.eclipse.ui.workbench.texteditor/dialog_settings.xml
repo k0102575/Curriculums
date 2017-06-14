@@ -2,14 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="croomDao" key="selection"/>
+		<item value="Service" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="memberDao"/>
 			<item value="Dao"/>
+			<item value="memberDao"/>
 			<item value="Teacher"/>
 			<item value="teacher"/>
 			<item value="teacherDao"/>
@@ -18,8 +18,8 @@
 			<item value="destory"/>
 		</list>
 		<list key="replacehistory">
-			<item value="croomDao"/>
 			<item value="Service"/>
+			<item value="croomDao"/>
 			<item value="Member"/>
 			<item value="member"/>
 			<item value="memberDao"/>

@@ -12,10 +12,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-import bitcamp.java93.dao.CroomDao;
-import bitcamp.java93.dao.ManagerDao;
 import bitcamp.java93.domain.Croom;
 import bitcamp.java93.domain.Manager;
+import bitcamp.java93.service.CroomService;
+import bitcamp.java93.service.ManagerService;
 
 @WebServlet(urlPatterns="/lect/form")
 public class LectFormServlet extends GenericServlet {
@@ -33,11 +33,11 @@ public class LectFormServlet extends GenericServlet {
     out.println("</html>");
     
     try {
-      CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
-      ManagerDao managerDao = (ManagerDao) this.getServletContext().getAttribute("managerDao");
+      CroomService croomService = (CroomService) this.getServletContext().getAttribute("croomService");
+      ManagerService managerService = (ManagerService) this.getServletContext().getAttribute("managerService");
     
-    List<Croom> croom = croomDao.selectList();
-    List<Manager> manager = managerDao.selectList();
+    List<Croom> croom = croomService.allList();
+    List<Manager> manager = managerService.allList();
     
     out.println("<!DOCTYPE html>");
     out.println("<html>");

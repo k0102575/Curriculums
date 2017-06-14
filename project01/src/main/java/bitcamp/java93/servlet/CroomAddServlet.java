@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.CroomDao;
 import bitcamp.java93.domain.Croom;
+import bitcamp.java93.service.CroomService;
 
 @WebServlet(urlPatterns="/croom/add")
 public class CroomAddServlet extends HttpServlet {
@@ -27,9 +27,9 @@ public class CroomAddServlet extends HttpServlet {
     
     
     try {
-      CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
+      CroomService croomService = (CroomService) this.getServletContext().getAttribute("croomService");
       
-    croomDao.insert(c);
+    croomService.add(c);
     
     res.sendRedirect("list");
     

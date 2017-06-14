@@ -12,8 +12,8 @@
 <body>
 	<jsp:include page="/header"></jsp:include>
 	<h1>강사 목록</h1>
-	<a href='form.html'>새 강사</a>
-	<br>
+	<a href='form.html'>새강사</a>
+  <a href='../member/list'>회원목록</a>
 	<table border='1'>
 	<thead>
 	<tr><th>번호</th><th>이름</th><th>전화</th><th>이메일</th><th>홈페이지</th></tr>

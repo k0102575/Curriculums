@@ -2,6 +2,8 @@
 
 package bitcamp.java93.domain;
 
+import java.util.List;
+
 public class Lect {
   int no;
   int crmno;
@@ -13,11 +15,29 @@ public class Lect {
   String sdt;
   String edt;
   int qty;
+  List<Croom> croomList;
+  List<Manager> managerList;
 
   @Override
   public String toString() {
     return "Lect [no=" + no + ", crmno=" + crmno + ", mrno=" + mrno + ", titl=" + titl + ", dscp=" + dscp
         + ", pric=" + pric + ", thrs=" + thrs + ", sdt=" + sdt + ", edt=" + edt + ", qty=" + qty + "]";
+  }
+  
+  public void setManagerList(List<Manager> managerList) {
+    this.managerList = managerList;
+  }
+  
+  public List<Manager> getManagerList() {
+    return managerList;
+  }
+
+  public List<Croom> getCroomList() {
+    return croomList;
+  }
+
+  public void setCroomList(List<Croom> croomList) {
+    this.croomList = croomList;
   }
 
   public int getNo() {

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.LectDao;
 import bitcamp.java93.domain.Lect;
+import bitcamp.java93.service.LectService;
 
 @WebServlet(urlPatterns="/lect/add")
 public class LectAddServlet extends HttpServlet {
@@ -32,9 +32,9 @@ public class LectAddServlet extends HttpServlet {
     l.setMrno(Integer.parseInt(req.getParameter("mrno")));
     
     try {
-      LectDao lectDao = (LectDao) this.getServletContext().getAttribute("lectDao");
+      LectService lectService = (LectService) this.getServletContext().getAttribute("lectService");
     
-    lectDao.insert(l);
+    lectService.add(l);  
     
     res.sendRedirect("list");
     

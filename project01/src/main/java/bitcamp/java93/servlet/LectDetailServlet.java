@@ -11,12 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.CroomDao;
-import bitcamp.java93.dao.LectDao;
-import bitcamp.java93.dao.ManagerDao;
 import bitcamp.java93.domain.Croom;
 import bitcamp.java93.domain.Lect;
 import bitcamp.java93.domain.Manager;
+import bitcamp.java93.service.LectService;
 
 @WebServlet(urlPatterns="/lect/detail")
 public class LectDetailServlet extends HttpServlet {
@@ -44,21 +42,19 @@ public class LectDetailServlet extends HttpServlet {
 
 
     try {
-      LectDao lectDao = (LectDao) this.getServletContext().getAttribute("lectDao");
-      CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
-      ManagerDao managerDao = (ManagerDao) this.getServletContext().getAttribute("managerDao");
+      LectService lectService = (LectService) this.getServletContext().getAttribute("lectService");
   
       int no = Integer.parseInt(req.getParameter("no"));
       
-      Lect lect = lectDao.selectOne(no);
-      
-      List<Croom> croom = croomDao.selectList();
-      List<Manager> manager = managerDao.selectList();
+      Lect lect = lectService.get(no);
       
       if (lect == null) {
         throw new Exception(no + "번 회원을 찾지 못했습니다.");
       }
-
+      
+      List<Manager> manager = lect.getManagerList();
+      List<Croom> croom = lect.getCroomList();
+      
       out.printf("<form action='update' method='POST'>\n");
       out.printf("번호:<input type='text' name='no' value='%d' readonly><br>\n", lect.getNo());
       out.printf("제목:<input type='text' name='titl' value='%s'><br>\n", lect.getTitl());
@@ -68,11 +64,9 @@ public class LectDetailServlet extends HttpServlet {
       out.printf("총수강인원:<input type='text' name='qty' value='%d'><br>\n", lect.getQty());
       out.printf("가격:<input type='text' name='pric' value='%d'><br>\n", lect.getPric());
       out.printf("총시간:<input type='text' name='thrs' value='%d'><br>\n", lect.getThrs());
-     
       
       out.println("<select name='crmno'><br>");
       out.println("<option value='0'>강의실을 선택하세요!</option><br>\n");
-      
       
       for (Croom c : croom) {
         if(c.getNo() == lect.getCrmno()) {

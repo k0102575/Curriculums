@@ -1,5 +1,5 @@
 # 웹 프로젝트 
-## 01. 프로젝트 기본 디렉토리 생성 o
+## 01. 프로젝트 기본 디렉토리 생성
 ```
 project/
   src/
@@ -19,7 +19,7 @@ project/
                           예) .properties, .xml, .txt 등
 ```
 
-## 02 gradle 설정 파일을 준비 o
+## 02 gradle 설정 파일을 준비
 1) gradle 빌드 도구를 실행할 때 필요한 설정 파일을 준비한다.
 ```
 프로젝트 폴더> gradle init
@@ -32,55 +32,55 @@ build.gradle 등의 파일이 생성된다.
 > gradle eclipse
 ```
 
-## 03 회원관리 서블릿 작성 o
+## 03 회원관리 서블릿 작성
 - GenericServlet 추상 클래스를 상속 받아서 서블릿을 만든다. 
 
-## 04 리프래시, 리다이렉트, HttpServlet 추상 클래스 적용 o
+## 04 리프래시, 리다이렉트, HttpServlet 추상 클래스 적용
 - 회원 등록 후 목록으로 리다이렉트
 - 회원 변경이나 삭제 후 목록으로 리프래시 
 - 서블릿 클래스 명을 역할에 맞게 변경
 
-## 05 포워드, 인클루드 적용 o
+## 05 포워드, 인클루드 적용
 - 서블릿 실행 중 오류가 발생하면 ErrorServlet으로 포워딩 시킨다.
 - 각 서블릿의 출력 화면에 꼬리말(FooterServlet)과 
   기본 스타일을 출력하는 서블릿(StyleServlet)을 인클루딩 시킨다.
 - 꼬리말을 출력할 FootServlet 추가
 - 기본 스타일을 출력할 StyleServlet 추가 
 
-## 06 ServletRequest 보관소 적용 o
+## 06 ServletRequest 보관소 적용
 - 서블릿에서 발생한 예외 정보를 ServletRequest 보관소에 저장하여 
   ErrorServlet에 전달한다.
 
-## 07 SerlvetContext 보관소와 서블릿 객체 자동 생성 적용 o
+## 07 SerlvetContext 보관소와 서블릿 객체 자동 생성 적용
 - InitServlet 추가
   - 웹 애플리케이션에서 사용할 객체를 준비하는 서블릿
   - DAO와 DBConnectionPool 객체를 생성하여 ServletContext 보관소에 저장한다.
   - 다른 서블릿들은 이 보관소에 저장된 DAO를 꺼내 사용한다. 
 
-## 08 클래스들을 역할에 따라 패키지로 분리시킨다. o
+## 08 클래스들을 역할에 따라 패키지로 분리시킨다.
 - 소스 코드의 유지보수를 좋게 하기 위해서이다.
   - domain: Member 클래스처럼 사용자 정의 데이터 타입을 다루는 클래스를 둔다.
   - dao: DB 테이블의 데이터를 다루는 클래스를 둔다.
   - util: DBConnectionPool 처럼 기타 유틸리티 클래스를 둔다.
   - servlet: 서블릿 클래스들을 둔다.
   
-## 09 ServletContextListener 리스너 적용 o
+## 09 ServletContextListener 리스너 적용
 - InitServlet 에서 준비하던 DAO 객체를 ServletContextListener 옮긴다.
 - 즉 웹 애플리케이션이 시작될 때 공통 객체들을 준비시킨다.
 - 예) ContextLoaderListener
 
-## 10 Filter 적용 o
+## 10 Filter 적용 
 - POST 방식으로 서버에 전달되는 데이터의 문자 집합을 지정하는 작업을 
   필터에서 처리한다.
 - 필터를 사용하면 각 서블릿 마다 req.setCharacterEncoding("UTF-8")을 
   호출할 필요가 없다.
 - 예) CharacterEncodingFilter 
 
-## 11 GET/POST 구분하기 o
+## 11 GET/POST 구분하기
 - MemberListServlet, MemberDetailServlet, MemberDeleteServlet 은 GET 요청만 처리하기
 - MemberAddServlet, MemberUpdateServlet 은 POST 요청만 처리하기
 
-## 12 로그인 기능 추가하기 o
+## 12 로그인 기능 추가하기
 - 로그인 폼 추가
   - /webapp/auth/login.html
 - 로그인 처리 서블릿 추가
@@ -88,7 +88,7 @@ build.gradle 등의 파일이 생성된다.
 - 이메일과 암호로 사용자 정보를 조회하는 메서드 추가
   - MemberDao.selectOneByEmailPassword(String email, String password)
 
-## 13 로그인 정보 출력 o
+## 13 로그인 정보 출력
 - 문제 
   - 사용자별로 정보를 관리하고 싶다.
 - 해결
@@ -102,7 +102,7 @@ build.gradle 등의 파일이 생성된다.
   4) 이후부터 서버에 요청할 때 마다 그 숫자를 파라미터로 넘긴다.
       
 
-## 14 로그인 정보 출력 I + 필터 적용 o
+## 14 로그인 정보 출력 I + 필터 적용
 - 문제
   - 로그인 여부를 검사하는 코드가 여러 서블릿에 중복해 들어있다.
 - 해결
@@ -111,7 +111,7 @@ build.gradle 등의 파일이 생성된다.
     공통 코드를 필터에 담아서 분리한다.
     예) AuthCheckFilter 
 
-## 15 쿠키를 도입하여 세션 ID 관리하기 o
+## 15 쿠키를 도입하여 세션 ID 관리하기
 - 문제
   - 로그인을 한 후 서버에서 발급한 sessionId를 사용자가 손수 관리해야 한다.
   - 사용자가 서비스를 요청할 때 마다 URL 뒤에 sessionId 파라미터를 직접 붙여야 한다.
@@ -154,12 +154,66 @@ build.gradle 등의 파일이 생성된다.
   - 로그인 회원의 정보를 알고 싶다면 HttpSession 보관소에서 꺼내라!
   - LoginServlet, LogoutServlet, AuthCheckFilter, HeaderServlet 변경
 
+## 18 강사 관리 기능 추가 
+- 강사 데이터를 다룰 Value Object 추가
+  - Teacher.java
+- 강사 데이터를 DB에 저장하거나 조회할 DAO 추가
+  - TeacherDao.java
+- ContextLoaderListener에서 TeacherDao 객체를 준비한다.
+  - ContextLoaderListener.java 변경  
+- 강사 목록조회 서블릿 추가
+  - TeacherListServlet.java
+- 강사 상세조회 서블릿 추가
+  - TeacherDetailServlet.java
+- 강사 등록 서블릿 추가
+  - TeacherAddServlet.java
+- 강사 변경 서블릿 추가
+  - TeacherUpdateServlet.java
+- 강사 삭제 서블릿 추가
+  - TeacherDeleteServlet.java
 
+## 19 서비스 컴포넌트 추가
+- 업무로직과 트랜잭션을 담당할 서비스 컴포넌트 추가
+  - TeacherService.java 
+- TeacherXxxServlet 서블릿 클래스에서 비즈니스로직을 분리하여 서비스 컴포넌트에 둔다.
+  - 비즈니스 로직을 화면처리 코드에서 분리하게 되면, 재사용성이 높아진다.
+- ContextLoaderListener에서 TeacherService 객체를 준비한다.
+  - ContextLoaderListener.java 변경
+- TeacherXxxServlet에서 DAO 대신 Service 컴포넌트를 사용하도록 변경한다.
+  - TeacherXxxServlet.java 변경
 
+## 20 강사의 사진 파일 업로드 기능 추가 
+- 파일 업로드를 처리할 때 사용할 라이브러리 추가하기
+  - build.gradle 파일에 라이브러리 정보 추가
+  - "gradle eclipse" 명령 실행
+  - 프로젝트 리프래시
+- Multipart 폼 데이터를 처리하는 유틸리티 클래스 추가하기
+  - MultipartFormDataProcessor.java
+- Teacher 클래스에 사진 경로를 저장할 필드를 추가한다.
+  - Teacher.java 변경 
+- 강사 정보 등록 폼에 사진 파일을 3개 입력 받는 항목을 추가한다.
+  - /webapp/teacher/form.html 변경
+- 업로드 사진 파일을 저장하고 조회, 삭제한다. 
+  - /webapp/teacher/photo/ 디렉토리에 사진 파일 저장한다.
+  - TeacherAddServlet, TeacherDetailServlet, TeacherUpdateServlet, TeacherDeleteServlet 변경한다.  
+- 강사 정보를 등록하는 서비스 객체 변경
+  - TeacherService.java 변경
+- 강사 정보를 등록할 때 사진 파일명을 TCH_PHOT 테이블에 입력한다.
+  - TeacherDao.java 변경 
 
-
-
-
+## 21 JSP 도입
+- JSP 기술과 JSTL 태그 라이브러리를 도입하여 화면 생성을 쉽게 한다.
+  - JSTL 라이브러리 검색(mvnrepository.com)
+  - build.gradle 파일에 라이브러리 정보 추가
+  - "gradle eclipse" 실행
+  - 프로젝트 리프래시
+- TeacherListServlet 클래스에서 출력 부분을 JSP로 이관한다.
+  - 서블릿 클래스에서는 JSP를 include 하면서 DAO에서 가져온 목록 데이터를 넘긴다.
+  - /webapp/teacher/list.jsp 추가하여 서블릿에서 받은 목록 데이터로 화면을 출력한다.
+- TeacherDetailServlet 클래스에서 출력 부분을 JSP로 이관한다.
+  - 서블릿 클래스에서는 JSP를 include 하면서 DAO에서 가져온 목록 데이터를 넘긴다.
+  - /webapp/teacher/detail.jsp 추가하여 서블릿에서 받은 목록 데이터로 화면을 출력한다.  
+   
 
 
 

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.LectDao;
+import bitcamp.java93.service.LectService;
 
 @WebServlet(urlPatterns="/lect/delete")
 public class LectDeleteServlet extends HttpServlet {
@@ -39,14 +39,12 @@ public class LectDeleteServlet extends HttpServlet {
 
 
     try {
-      LectDao lectDao = (LectDao) this.getServletContext().getAttribute("lectDao");
+      LectService lectService = (LectService) this.getServletContext().getAttribute("lectService");
 
       int no = Integer.parseInt(req.getParameter("no"));
 
-      int count = lectDao.delete(no);
-      if (count < 1) {
-        throw new Exception(no + "번 회원을 찾지 못했습니다.");
-      }
+      lectService.remove(no);
+      
       out.println("<p>삭제 성공 입니다.</p>");
       
       res.setHeader("Refresh", "1;url=list");

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.CroomDao;
 import bitcamp.java93.domain.Croom;
+import bitcamp.java93.service.CroomService;
 
 @WebServlet(urlPatterns="/croom/update")
 public class CroomUpdateServlet extends HttpServlet {
@@ -44,12 +44,10 @@ public class CroomUpdateServlet extends HttpServlet {
     out.println("<h1>교실 변경</h1>");
 
     try {
-      CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
+      CroomService croomService = (CroomService) this.getServletContext().getAttribute("croomService");
 
-      int count = croomDao.update(c);
-      if (count < 1) {
-        throw new Exception(c.getNo() + "번 회원을 찾지 못했습니다.");
-      }
+      croomService.update(c);
+      
       out.println("<p>변경 성공 입니다.</p>");
       
       res.setHeader("Refresh", "1;url=list");

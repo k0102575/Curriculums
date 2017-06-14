@@ -1,0 +1,16 @@
+package bitcamp.java93.service;
+
+import java.util.List;
+import java
+
+public class ManagerService {
+  
+  ManagerDao managerDao;
+  
+  public List<Manager> list(int pageNo, int pageSize) throws Exception {
+    
+    return managerDao.
+  } // list()
+
+  
+}

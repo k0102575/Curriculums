@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.CroomDao;
 import bitcamp.java93.domain.Croom;
+import bitcamp.java93.service.CroomService;
 
 @WebServlet(urlPatterns="/croom/detail")
 public class CroomDetailServlet extends HttpServlet {
@@ -40,11 +40,11 @@ public class CroomDetailServlet extends HttpServlet {
 
 
     try {
-      CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
+      CroomService croomService = (CroomService) this.getServletContext().getAttribute("croomService");
 
       int no = Integer.parseInt(req.getParameter("no"));
 
-      Croom croom = croomDao.selectOne(no);
+      Croom croom = croomService.get(no);
       if (croom == null) {
         throw new Exception(no + "번 교실을 찾지 못했습니다.");
       }

@@ -18,6 +18,11 @@ public class CroomService {
     return croomDao.selectList(pageNo, pageSize);
   } // list()
   
+  public List<Croom> allList() throws Exception {
+    
+    return croomDao.selectList();
+  } // list()
+  
   public Croom get(int no) throws Exception {
     
     return croomDao.selectOne(no);

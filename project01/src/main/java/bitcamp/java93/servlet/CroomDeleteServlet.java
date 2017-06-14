@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bitcamp.java93.dao.CroomDao;
+import bitcamp.java93.service.CroomService;
 
 @WebServlet(urlPatterns="/croom/delete")
 public class CroomDeleteServlet extends HttpServlet {
@@ -39,14 +39,12 @@ public class CroomDeleteServlet extends HttpServlet {
 
 
     try {
-      CroomDao croomDao = (CroomDao) this.getServletContext().getAttribute("croomDao");
+      CroomService croomService = (CroomService) this.getServletContext().getAttribute("croomService");
 
       int no = Integer.parseInt(req.getParameter("no"));
 
-      int count = croomDao.delete(no);
-      if (count < 1) {
-        throw new Exception(no + "번 회원을 찾지 못했습니다.");
-      }
+      croomService.remove(no);
+      
       out.println("<p>삭제 성공 입니다.</p>");
       
       res.addHeader("Refresh", "1;url=list");

@@ -11,6 +11,8 @@ import bitcamp.java93.dao.ManagerDao;
 import bitcamp.java93.dao.MemberDao;
 import bitcamp.java93.dao.TeacherDao;
 import bitcamp.java93.service.CroomService;
+import bitcamp.java93.service.LectService;
+import bitcamp.java93.service.ManagerService;
 import bitcamp.java93.service.MemberService;
 import bitcamp.java93.service.TeacherService;
 import bitcamp.java93.util.DBConnectionPool;
@@ -42,19 +44,25 @@ public class ContextLoaderListener implements ServletContextListener{
     CroomService croomService = new CroomService();
     croomService.setCroomDao(croomDao);
     
+    ManagerService managerService = new ManagerService();
+    managerService.setManagerDao(managerDao);
+    
     TeacherService teacherService = new TeacherService();
     teacherService.setMemberDao(memberDao);
     teacherService.setTeacherDao(teacherDao);
     
+    LectService lectService = new LectService();
+    lectService.setCroomDao(croomDao);
+    lectService.setManagerDao(managerDao);
+    lectService.setLectDao(lectDao);
     
     ServletContext sc = sce.getServletContext();
     
     sc.setAttribute("teacherService", teacherService);
     sc.setAttribute("memberService", memberService);
-    
-    sc.setAttribute("lectDao", lectDao);
-    sc.setAttribute("croomDao", croomDao);
-    sc.setAttribute("managerDao", managerDao);
+    sc.setAttribute("lectService", lectService);
+    sc.setAttribute("managerService", managerService);
+    sc.setAttribute("croomService", croomService);
     
     } catch (Exception e) {
       e.printStackTrace();
