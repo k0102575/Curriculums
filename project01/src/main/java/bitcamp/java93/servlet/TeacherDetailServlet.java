@@ -1,8 +1,6 @@
 package bitcamp.java93.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,26 +20,6 @@ public class TeacherDetailServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     
-    res.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = res.getWriter();
-
-    out.println("<!DOCTYPE html>");
-    out.println("<html>");
-    out.println("<head>");
-    out.println("<meta charset='UTF-8'>");
-    out.println("<title>강사관리</title>");
-    
-    RequestDispatcher rd = req.getRequestDispatcher("/style/core");
-    rd.include(req, res);
-    
-    out.println("</head>");
-    out.println("<body>");
-    
-    rd = req.getRequestDispatcher("/header");
-    rd.include(req, res);
-    
-    out.println("<h1>강사 조회</h1>");
-
     try {
       TeacherService teacherService = (TeacherService) this.getServletContext().getAttribute("teacherService");
 
@@ -53,59 +31,21 @@ public class TeacherDetailServlet extends HttpServlet {
         throw new Exception(no + "번 강사를 찾지 못했습니다.");
       }
       
-      out.printf("<form action='update' method='POST' enctype='multipart/form-data'>\n");
-      out.printf("번호:<input type='text' name='no' value='%d' readonly><br>\n", teacher.getNo());
-      out.printf("이름:<input type='text' name='name' value='%s'><br>\n", teacher.getName());
-      out.printf("전화:<input type='text' name='tel' value='%s'><br>\n", teacher.getTel());
-      out.printf("이메일:<input type='text' name='email' value='%s'><br>\n", teacher.getEmail());
-      out.println("암호:<input type='password' name='password'><br>\n");
-      out.printf("홈페이지:<input type='text' name='homepage' value='%s'><br>\n", teacher.getHomepage());
-      out.printf("페이스북:<input type='text' name='facebook' value='%s'><br>\n", teacher.getFacebook());
-      out.printf("트위터:<input type='text' name='twitter' value='%s'><br>\n", teacher.getTwitter());
-      out.println("파일1:<input type='file' name='photo1'><br>");
-      out.println("파일2:<input type='file' name='photo2'><br>");
-      out.println("파일3:<input type='file' name='photo3'><br>");
+      res.setContentType("text/html;charset=UTF-8");
       
-      out.println("<div>");
-      List<String> photoList = teacher.getPhotoList();
-      for (String photo : photoList) {
-        out.printf("<img src='photo/%s' class='photo1'>\n", photo);
-      }
-      out.println("</div>");
+      req.setAttribute("teacher", teacher);
+      RequestDispatcher rd = req.getRequestDispatcher("/teacher/detail.jsp");
+      rd.include(req, res);
       
-      out.println("<button>변경</button>");
-      out.println("<button type='button' onclick='doDelete()'>삭제</button>");
-      out.println("<button type='button' onclick='doList()'>목록</button>");
-      out.println("</form>");
-
-      out.println("<script>");
-      out.println("function doDelete() {");
-      out.printf("  location.href = 'delete?no=%s'\n", req.getParameter("no"));
-      out.println("}");
-      out.println("</script>");
-      
-      out.println("<script>");
-      out.println("function doList() {");
-      out.println("location.href = 'list'");
-      out.println("}");
-      out.println("</script>");
-
     } catch (Exception e) {
       req.setAttribute("error", e);
 
-      rd = req.getRequestDispatcher("/error");
+      RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
       rd.forward(req, res);
       
       return;
     }
     
-    rd = req.getRequestDispatcher("/footer");
-    rd.include(req, res);
-    
-    out.println("</body>");
-    out.println("</html>");
-
-
   } // service()
 
 }

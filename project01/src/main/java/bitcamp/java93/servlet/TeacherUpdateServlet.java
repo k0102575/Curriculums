@@ -4,7 +4,6 @@ package bitcamp.java93.servlet;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -28,12 +27,12 @@ public class TeacherUpdateServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-    
+
     try {
       Map<String, FileItem> partMap = MultiPartFormProcessor.parse(req);
 
       Teacher t = new Teacher();
-      
+
       t.setNo(Integer.parseInt(partMap.get("no").getString()));
       t.setName(partMap.get("name").getString("UTF-8"));
       t.setTel(partMap.get("tel").getString("UTF-8"));
@@ -53,43 +52,20 @@ public class TeacherUpdateServlet extends HttpServlet {
           photoList.add(fileItem.getName());
         }
       }
-      
+
       t.setPhotoList(photoList);
-        
-        TeacherService teacherService = (TeacherService) this.getServletContext().getAttribute("teacherService");
-        teacherService.update(t);
-  
+
+      TeacherService teacherService = (TeacherService) this.getServletContext().getAttribute("teacherService");
+      teacherService.update(t);
+
       res.setContentType("text/html;charset=UTF-8");
-      PrintWriter out = res.getWriter();
-  
-      out.println("<!DOCTYPE html>");
-      out.println("<html>");
-      out.println("<head>");
-      out.println("<meta charset='UTF-8'>");
-      out.println("<title>강사관리</title>");
-  
-      RequestDispatcher rd = req.getRequestDispatcher("/style/core");
-      rd.include(req, res);
-  
-      out.println("</head>");
-      out.println("<body>");
-      out.println("<h1>강사 변경</h1>");
 
-      out.println("<p>변경 성공 입니다.</p>");
+      res.sendRedirect("list");
 
-
-      rd = req.getRequestDispatcher("/footer");
-      rd.include(req, res);
-      
-      out.println("</body>");
-      out.println("</html>");
-      
-      res.setHeader("Refresh", "1;url=list");
-      
     } catch (Exception e) {
       req.setAttribute("error", e);
 
-      RequestDispatcher rd = req.getRequestDispatcher("/error");
+      RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
       rd.forward(req, res);
 
       return;

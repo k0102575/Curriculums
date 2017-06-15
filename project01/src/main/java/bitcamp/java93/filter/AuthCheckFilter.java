@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bitcamp.java93.domain.Member;
 
-@WebFilter({"/member/*", "/croom/*", "/lect/*"})
+@WebFilter({"/member/*", "/croom/*", "/lect/* , /teacher/*"})
 public class AuthCheckFilter implements Filter{
 
   @Override

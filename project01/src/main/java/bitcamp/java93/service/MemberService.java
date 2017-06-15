@@ -50,7 +50,7 @@ public class MemberService {
     
   } // remove()
 
-  public Member check(String email, String password) throws Exception {
+  public Member getByEmailPassword(String email, String password) throws Exception {
     
     return memberDao.selectOneByEmailPassword(email, password);
     

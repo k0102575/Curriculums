@@ -142,10 +142,9 @@ public class TeacherDao {
 
     try (
         PreparedStatement stmt = con.prepareStatement
-        ("select m.mno, m.name, m.tel, m.email, t.hmpg, t.fcbk, t.twit " +
-            " from tcher t inner join memb m on t.tno=m.mno ");
+        ("select mno, name, tel, email from memb where email=? and pwd=password(?)");
         ) {
-
+      
       stmt.setString(1, email);
       stmt.setString(2, password);
 

@@ -49,7 +49,7 @@ public class TeacherListServlet extends HttpServlet {
     } catch (Exception e){
       req.setAttribute("error", e);
 
-      RequestDispatcher rd = req.getRequestDispatcher("/error");
+      RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
       rd.forward(req, res);
       return;
     }

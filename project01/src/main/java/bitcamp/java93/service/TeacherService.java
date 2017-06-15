@@ -31,6 +31,10 @@ public class TeacherService {
     return teacher;
   } // get()
   
+  public Teacher getByEmailPassword(String email, String password) throws Exception {
+    return teacherDao.selectOneByEmailPassword(email, password);
+  }
+  
   public void add(Teacher teacher) throws Exception {
     memberDao.insert(teacher);
     teacherDao.insert(teacher);
