@@ -1,0 +1,57 @@
+<%-- JSP 구성 요소 : JSTL - c:if --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JSP</title>
+</head>
+<body>
+<h1>JSTL - c:if 태그 사용법</h1>
+<c:set var="name" value="유관순"/>
+<c:set var="age" value="20"/>
+<c:set var="working" value="true"/>
+<hr>
+
+<c:if test="true"><p>true</p></c:if>
+<c:if test="TRUE"><p>TRUE</p></c:if>
+<c:if test="True"><p>True</p></c:if>
+<c:if test="trUe"><p>trUe</p></c:if>
+
+<c:if test="false"><p>false</p></c:if>
+<c:if test="aaaa"><p>aaaa</p></c:if>
+
+<c:if test="name==유관순"><p>유관순1111</p></c:if>
+
+<c:if test="${name=='유관순'}">유관순2222<br></c:if>
+<c:if test="${age==20}">20살<br></c:if>
+<c:if test="${working==true}">재직중<br></c:if>
+<c:if test="${working}">재직중2<br></c:if>
+
+<c:if test="${working}" var="result" scope="page">재직중3<br></c:if>
+####${pageScope.result}####<br>
+
+</body>
+</html>
+
+<%!
+public class Member {
+  // 필드 선언
+  String name2;
+  int age;
+  boolean working;
+  
+  // 프로퍼티 선언
+  public void setName(String name) {this.name2 = name;}
+  public void setAge(int age) {this.age = age;}
+  public void setWorking(boolean working) {this.working = working;}
+  public String getName() {return this.name2;}
+  public int getAge() {return this.age;}
+  public boolean isWorking() {return this.working;}
+  
+}
+
+%>

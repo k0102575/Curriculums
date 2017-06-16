@@ -1,0 +1,25 @@
+<%-- JSP 구성 요소 : EL - empty 연산자 사용법 --%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JSP</title>
+</head>
+<body>
+<h1>EL - empty 연산자 사용법</h1>
+
+<c:set var="name" value="홍길동"/>
+
+\${empty name} : ${empty name}<br>
+\${not empty name} : ${not empty name}<br>
+\${!empty name} : ${!empty name}<br>
+
+</body>
+</html>

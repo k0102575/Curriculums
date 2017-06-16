@@ -1,7 +1,0 @@
-/* 웹 애플리케이션 구성 요소 - Filter */
-
-package step10;
-
-public class Filter01 implements Filter {
-
-}

@@ -1,7 +1,0 @@
-package bitcamp.java93.filter;
-
-import javax.servlet.Filter;
-
-public class CharacterEncodingFilter implements Filter{
-
-}

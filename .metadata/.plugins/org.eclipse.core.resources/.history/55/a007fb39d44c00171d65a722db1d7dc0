@@ -1,7 +1,0 @@
-/* HttpServlet 추상 클래스를 상속받아 서블릿 만들기 I*/
-
-package step11;
-
-public class Servlet01 {
-
-}

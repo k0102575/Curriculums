@@ -1,7 +1,0 @@
-package step10;
-
-import javax.servlet.http.HttpServlet;
-
-public class Servlet01 extends HttpServlet {
-  
-}
