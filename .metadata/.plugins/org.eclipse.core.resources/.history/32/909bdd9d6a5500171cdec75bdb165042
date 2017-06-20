@@ -1,0 +1,28 @@
+package step27;
+
+public class Car {
+  String model;
+  int cc;
+  
+  Public Car() {
+    this.model = "기본자동차";
+  }
+  
+  public String getModel() {
+    return model;
+  }
+  
+  public void setModel(String model) {
+    this.model = model;
+  }
+  
+  public int getCc() {
+    return cc;
+  }
+  
+  public void setCc(int cc) {
+    this.cc = cc;
+  }
+  
+  
+}

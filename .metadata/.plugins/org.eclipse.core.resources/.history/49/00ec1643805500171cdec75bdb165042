@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="c1" class="step27.ex2.Car" />
+  <bean id="c2" class="step27.ex2.Car" >
+    <constructor-arg value="랜드로버 디스커버리"></constructor-arg>
+    <constructor-arg value="3000"></constructor-arg>
+  </bean>
+  
+  <bean id="c3" class="step27.ex2.Car" >
+    <constructor-arg index="1" value="3500"></constructor-arg>
+    <constructor-arg index="0" value="포드 익스플로러"></constructor-arg>
+  </bean>
+  
+    <bean id="c4" class="step27.ex2.Car" >
+    <constructor-arg index="1" type="int"  value="3498"></constructor-arg>
+    <constructor-arg index="0" type="String" value="인피니티 Q50S"></constructor-arg>
+  </bean>
+  
+</beans>

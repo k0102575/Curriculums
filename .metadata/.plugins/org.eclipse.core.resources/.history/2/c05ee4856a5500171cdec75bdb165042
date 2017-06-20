@@ -1,0 +1,8 @@
+package step27;
+
+public class Car {
+  String model;
+  int cc;
+  
+  
+}

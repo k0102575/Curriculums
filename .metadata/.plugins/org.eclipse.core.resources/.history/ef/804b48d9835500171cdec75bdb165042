@@ -1,0 +1,47 @@
+package step27.ex2;
+
+public class Car {
+  String model;
+  int cc;
+  Engine engine;
+  
+
+  public Car() {
+    System.out.println("Car()");
+    this.model = "기본자동차";
+    this.cc = 900;
+  }
+  
+  public Car(String model, int cc) {
+    System.out.println("Car(String, int)");
+    this.model = model;
+    this.cc = cc;
+  }
+  
+  
+  public Engine getEngine() {
+    return engine;
+  }
+
+  public void setEngine(Engine engine) {
+    this.engine = engine;
+  }
+
+  public String getModel() {
+    return model;
+  }
+  
+  public void setModel(String model) {
+    this.model = model;
+  }
+  
+  public int getCc() {
+    return cc;
+  }
+  
+  public void setCc(int cc) {
+    this.cc = cc;
+  }
+  
+  
+}
