@@ -1,0 +1,8 @@
+package step26;
+
+public class Myclass {
+  public int publicVar;
+  String defaultVar;
+  
+  
+}

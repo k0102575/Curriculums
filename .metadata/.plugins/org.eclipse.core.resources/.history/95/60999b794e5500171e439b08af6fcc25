@@ -1,0 +1,10 @@
+package step26;
+
+public class Myclass {
+  public int publicVar;
+  String defaultVar;
+  protected boolean protectVar;
+  private float privateVar;
+  
+  
+}

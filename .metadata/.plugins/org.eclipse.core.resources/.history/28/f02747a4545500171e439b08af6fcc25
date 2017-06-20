@@ -1,0 +1,27 @@
+/* Class 도구 사용법: 인스턴스 생성하기 */
+package step26;
+
+import java.lang.reflect.Method;
+
+public class Test08 {
+  public static void main(String[] args) throws Exception {
+    
+    String str = new String("Hello");
+    Class<?> clazz = String.class;
+    
+    Method m = clazz.getMethod("replace", char.class, char.class);
+    
+    Object returnValue = m.invoke(str, 'l', 'x');
+    
+    System.out.println(returnValue);
+    
+    clazz = Math.class;
+    m = clazz.getMethod("abs", int.class);
+    
+    returnValue = m.invoke(null, -100);
+    
+    System.out.println(returnValue);
+    
+    
+  }
+}

@@ -1,0 +1,13 @@
+/* Class 도구 사용법: 메서드 호출하기 */
+package step26;
+
+import java.lang.reflect.Method;
+
+public class Test07 {
+  public static void main(String[] args) throws Exception {
+    Class<?> clazz = String.class;
+    
+    
+    
+  }
+}

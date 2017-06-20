@@ -1,0 +1,23 @@
+package step26;
+
+public class Myclass extends MySuper {
+  public int publicVar;
+  String defaultVar;
+  protected boolean protectVar;
+  private float privateVar;
+  
+  public Myclass(){};
+  public Myclass(int p1){};
+  public Myclass(String p1, int p2){};
+  
+  public void publicM() {}
+  void defaultM() {}
+  protected void protecteM() {}
+  private void privateM() {}
+  
+  public void m1() {}
+  public void m2(int p1) {}
+  public void m3(String p1, int p2) {}
+  
+  
+}

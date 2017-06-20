@@ -1,0 +1,18 @@
+/* Class 도구 사용법: 클래스의 특정 메서드만 추출하기 */
+package step26;
+
+import java.lang.reflect.Method;
+
+public class Test04 {
+  public static void main(String[] args) throws Exception {
+    
+    Class<?> clazz = Myclass.class;
+    
+    Method m = clazz.getMethod("m1");
+    System.out.println(m.getName());
+    
+    m = clazz.getMethod("m1", String.class);
+    System.out.println(m);
+    
+  }
+}

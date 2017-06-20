@@ -2,7 +2,6 @@ package bitcamp.java93.service;
 
 import java.util.List;
 
-import bitcamp.java93.annotation.Component;
 import bitcamp.java93.dao.MemberDao;
 import bitcamp.java93.domain.Member;
 
