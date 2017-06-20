@@ -21,6 +21,9 @@ public class ContextLoaderListener implements ServletContextListener {
       ServletContext sc = sce.getServletContext();
       
       ApplicationContext appCtx = new ClassPathXmlApplicationContext("bitcamp/java93/application-context.xml");
+      // 클래스 패스 
+      
+      
       
       sc.setAttribute("beanContainer", appCtx);
       
