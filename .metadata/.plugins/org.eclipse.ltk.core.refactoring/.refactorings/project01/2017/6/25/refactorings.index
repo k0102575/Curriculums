@@ -1,0 +1,25 @@
+1497832095903	Copy compilation unit
+1497832180661	Rename type 'TeacherDao'
+1497832195760	Copy compilation unit
+1497832201281	Rename type 'MemberDao'
+1497834231507	Copy compilation unit
+1497834247142	Rename type 'TeacherService'
+1497834258017	Rename package 'bitcamp.java93.service.base'
+1497836214855	Copy compilation unit
+1497836230254	Rename type 'DispacherServlet'
+1497840402884	Copy compilation unit
+1497840416949	Rename type 'TeacherListServlet'
+1497842195935	Delete element
+1497842205515	Copy compilation unit
+1497842215236	Rename type 'TeacherDetailServlet'
+1497842731746	Delete element
+1497842741265	Copy compilation units
+1497842744843	Delete elements
+1497842756673	Rename type 'TeacherAddServlet'
+1497842763143	Rename type 'TeacherDeleteServlet'
+1497842770899	Rename type 'TeacherUpdateServlet'
+1497849864009	Copy compilation units
+1497849868196	Delete elements
+1497849876351	Rename type 'LoginServlet'
+1497849888651	Rename type 'LogoutServlet'
+1497857819991	Copy compilation unit

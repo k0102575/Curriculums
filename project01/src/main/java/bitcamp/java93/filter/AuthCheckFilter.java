@@ -33,7 +33,7 @@ public class AuthCheckFilter implements Filter{
     Member loginMember = (Member) httpRequest.getSession().getAttribute("loginMember");
     
     if (loginMember == null) {
-      httpResponse.sendRedirect("../auth/login");
+      httpResponse.sendRedirect("../auth/login.do");
       return;
     }
     

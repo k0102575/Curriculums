@@ -1,0 +1,38 @@
+package bitcamp.java93.control;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import bitcamp.java93.domain.Teacher;
+import bitcamp.java93.service.TeacherService;
+
+public class TeacherDetailControl implements Controller {
+
+
+  @Override
+  public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    
+    try {
+      TeacherService teacherService = (TeacherService) this.getServletContext().getAttribute("teacherService");
+
+      int no = Integer.parseInt(req.getParameter("no"));
+
+      Teacher teacher = teacherService.get(no);
+      
+      if (teacher == null) {
+        throw new Exception(no + "번 강사를 찾지 못했습니다.");
+      }
+      
+      req.setAttribute("teacher", teacher);
+      req.setAttribute("view", "/teacher/detail.jsp");
+      
+    } catch (Exception e) {
+      req.setAttribute("error", e);
+    }
+    
+  } // service()
+
+}
