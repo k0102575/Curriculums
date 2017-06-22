@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="c1" class="step27.ex3.CarFactoryBean">
+		<property name="tireMaker" value="한국타이어" />
+		<property name="name" value="람보르기니"></property>
+	</bean>
+
+	<bean id="c2" class="step27.ex3.CarFactoryBean">
+		<property name="tireMaker" value="한국타이어" />
+		<property name="name" value="람보르기니"></property>
+	</bean>
+
+	<bean id="c3" class="step27.ex3.CarFactoryBean">
+		<property name="tireMaker" value="금호타이어" />
+		<property name="name" value="페라리"></property>
+	</bean>
+
+</beans>

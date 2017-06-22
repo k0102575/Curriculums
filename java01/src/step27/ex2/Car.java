@@ -1,15 +1,14 @@
 package step27.ex2;
 
+import java.util.Map;
+
 public class Car {
   String model;
   int cc;
   Engine engine;
+  Tire[] tires;
+  Map<String,Object> options;
   
-  @Override
-  public String toString() {
-    return "Car [model=" + model + ", cc=" + cc + ", engine=" + engine + "]";
-  }
-
   public Car() {
     System.out.println("Car()");
     this.model = "기본자동차";
@@ -29,21 +28,29 @@ public class Car {
     this.engine = engine;
   }
   
-  public Engine getEngine() {
-    return engine;
-  }
-
-  public void setEngine(Engine engine) {
-    System.out.println("setEngine()");
+  public Car(String model, int cc, Engine engine, Tire[] tires) {
+    System.out.println("Car(String, int, engine)");
+    this.model = model;
+    this.cc = cc;
     this.engine = engine;
+    this.tires = tires;
   }
-
+  
+  public Car(String model, int cc, Engine engine, Tire[] tires, Map options) {
+    System.out.println("Car(String, int, engine)");
+    this.model = model;
+    this.cc = cc;
+    this.engine = engine;
+    this.tires = tires;
+    this.options = options;
+  }
+  
+  
   public String getModel() {
     return model;
   }
   
   public void setModel(String model) {
-    System.out.println("setModel()");
     this.model = model;
   }
   
@@ -52,9 +59,34 @@ public class Car {
   }
   
   public void setCc(int cc) {
-    System.out.println("setCc()");
     this.cc = cc;
   }
+  
+  public Engine getEngine() {
+    return engine;
+  }
+  
+  public void setEngine(Engine engine) {
+    this.engine = engine;
+  }
+  
+  public Tire[] getTires() {
+    return tires;
+  }
+  
+  public void setTires(Tire[] tires) {
+    this.tires = tires;
+  }
+  
+  public Map<String, Object> getOptions() {
+    return options;
+  }
+  
+  public void setOptions(Map<String, Object> options) {
+    this.options = options;
+  }
+  
+  
   
   
 }

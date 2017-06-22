@@ -1,9 +1,0 @@
-/* 스프링 사용법: Spring IoC 컨테이너 준비 */
-
-package step27.ex1;
-
-public class Test01 {
-  public static void main(String[] args) {
-    
-  }
-}

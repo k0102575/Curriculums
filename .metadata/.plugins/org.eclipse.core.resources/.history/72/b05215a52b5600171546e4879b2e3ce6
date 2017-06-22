@@ -1,0 +1,30 @@
+package step27.ex3;
+
+import org.springframework.beans.factory.FactoryBean;
+
+public class DateFactoryBean implements FactoryBean {
+  String date;
+  
+  
+  
+  @Override
+  public Object getObject() throws Exception {
+    Date.valueOf(this.date);
+    return null;
+  }
+
+  @Override
+  public Class getObjectType() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public boolean isSingleton() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+  
+  
+
+}

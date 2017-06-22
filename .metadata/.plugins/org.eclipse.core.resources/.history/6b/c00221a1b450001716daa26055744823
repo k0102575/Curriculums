@@ -1,7 +1,0 @@
-package bitcamp.java93.util;
-
-public class MultiPartFormProcessor {
-  public static Map<String,FileItem> parse(HttpServletRequest request) throws Exception {
-    
-  }
-}

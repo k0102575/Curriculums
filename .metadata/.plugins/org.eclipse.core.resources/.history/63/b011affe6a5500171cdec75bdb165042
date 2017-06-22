@@ -1,9 +1,0 @@
-/* 스프링 사용법:  */
-
-package step27;
-
-public class Test01 {
-  public static void main(String[] args) {
-    
-  }
-}

@@ -1,0 +1,19 @@
+package step27.ex3;
+
+public class CarFactory {
+  public static Car createCar(String name) {
+    
+
+  }
+
+  private static Car createTico() {
+
+
+  }
+
+  private static Car createSonata() {
+
+
+  }
+
+}

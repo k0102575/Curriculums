@@ -1,0 +1,11 @@
+/* 스프링 사용법: 팩토리 메서드 호출하기 II */
+
+package step27.ex3;
+
+public class Test02 {
+  public static void main(String[] args) {
+
+    // 1) 일반적인 객체 생성
+    
+  }
+}
