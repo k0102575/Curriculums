@@ -39,9 +39,9 @@ public class MemberListServlet extends HttpServlet {
     try {
       MemberService memberService = (MemberService) this.getServletContext().getAttribute("memberService");
 
-      List<Member> list = memberService.list(pageNo, pageSize);
+//      List<Member> list = memberService.list(pageNo, pageSize);
       
-      req.setAttribute("list", list);
+//      req.setAttribute("list", list);
       RequestDispatcher rd = req.getRequestDispatcher("/member/list.jsp");
       rd.include(req, res);
 

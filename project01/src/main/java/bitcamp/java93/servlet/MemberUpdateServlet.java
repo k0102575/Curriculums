@@ -49,7 +49,7 @@ public class MemberUpdateServlet extends HttpServlet {
     try {
       MemberService memberService = (MemberService) this.getServletContext().getAttribute("memberService");
 
-      memberService.update(m);
+//      memberService.update(m);
       
       out.println("<p>변경 성공 입니다.</p>");
       

@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="tireMaker" key="selection"/>
+		<item value=" " key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="throws Exception"/>
+			<item value="throws Excpetion"/>
+			<item value="ex5"/>
+			<item value="ex4"/>
+			<item value="ex3"/>
 			<item value="&quot;비트타이어&quot;"/>
 			<item value="req"/>
 			<item value="add"/>
-			<item value="Dao"/>
-			<item value="memberDao"/>
-			<item value="Teacher"/>
-			<item value="teacher"/>
-			<item value="teacherDao"/>
 		</list>
 		<list key="replacehistory">
+			<item value=" "/>
+			<item value="ex6"/>
+			<item value="ex5"/>
+			<item value="ex4"/>
 			<item value="tireMaker"/>
 			<item value="request"/>
 			<item value="put"/>
 			<item value="Service"/>
-			<item value="croomDao"/>
-			<item value="Member"/>
-			<item value="member"/>
-			<item value="memberDao"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

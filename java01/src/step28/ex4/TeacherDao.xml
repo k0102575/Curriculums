@@ -33,8 +33,8 @@
 
 	<insert id="insert" parameterType="teacher">
 		insert into
-		memb(name,tel,email,pwd)
-		values(#{name},#{tel},#{email},password(#{password}))
+		tcher(tno, hmpg, fcbk, twit)
+		values(#{no},#{homepage},#{facebook},#{twitter})
 	</insert>
 
 </mapper>

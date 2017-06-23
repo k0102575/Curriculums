@@ -1,27 +1,28 @@
 package bitcamp.java93.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import bitcamp.java93.domain.Teacher;
 
 public interface TeacherDao {
 
-  List<Teacher> selectList(int pageNo, int pageSize) throws Exception; // selectList()
+  List<Teacher> selectList(Map<String,Object> valueMap); // selectList()
 
-  Teacher selectOne(int no) throws Exception; // selectOne()
+  Teacher selectOne(int no); // selectOne()
 
-  int insert(Teacher teacher) throws Exception; // insert()
-
-  int delete(int no) throws Exception; // delete()
-
-  int update(Teacher teacher) throws Exception; // update()
-
-  Teacher selectOneByEmailPassword(String email, String password) throws Exception; // selectOneByEmailPassword()
-
-  void insertPhoto(int no, List<String> photoList) throws Exception; // insertPhoto()
-
-  List<String> selectPhotoList(int teacherNo) throws Exception; // selectPhotoList()
+  Teacher selectOneByEmailPassword(Map<String,Object> valueMap); // selectOneByEmailPassword()
   
-  void deletePhoto(int teacherNo) throws Exception; // deletePhoto()
+  int insert(Teacher teacher); // insert()
+
+  int delete(int no); // delete()
+
+  int update(Teacher teacher); // update()
+
+  void insertPhoto(Map<String,Object> valueMap); // insertPhoto()
+
+  List<String> selectPhotoList(int teacherNo); // selectPhotoList()
+  
+  void deletePhoto(int teacherNo); // deletePhoto()
 
 }

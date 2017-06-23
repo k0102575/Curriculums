@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="step28.ex5" />
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="$com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/weappdb" />
+		<property name="username" value="webapp" />
+		<property name="password" value="1111" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="step28/ex5/mybatis-config.xml" />
+	</bean>
+
+	<!-- 스프링 IOC 컨테이너는 FactoryBean으로 만들어진것이면 GetObject를 호출을 하고 그리턴값을 저장한다. 셋터로 
+		저장하고 저장된값을 가져와서 호출하고 그리턴값을 저장 -->
+
+</beans>

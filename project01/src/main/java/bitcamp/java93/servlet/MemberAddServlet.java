@@ -33,7 +33,7 @@ public class MemberAddServlet extends HttpServlet {
     try {
       MemberService memberService = (MemberService) this.getServletContext().getAttribute("memberService");
       
-      memberService.add(m);
+//      memberService.add(m);
       
       res.sendRedirect("list");
     } catch (Exception e) {

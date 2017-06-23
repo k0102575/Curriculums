@@ -1,0 +1,28 @@
+package step28.ex4;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class ProjectDaoImpl implements ProjectDao {
+  SqlSessionFactory sqlSessionFactory;
+
+  public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+    this.sqlSessionFactory = sqlSessionFactory;
+  }
+
+  public Member selectOne(int no) throws Exception { 
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+
+    try{
+      return sqlSession.selectOne("step28.ex3.MemberDao.selectOne", no);
+    } finally {
+      sqlSession.close();
+    }
+
+  } // selectOne()
+
+}
+

@@ -42,7 +42,7 @@ public class MemberDeleteServlet extends HttpServlet {
       
       int no = Integer.parseInt(req.getParameter("no"));
       
-      memberService.remove(no);
+//      memberService.remove(no);
       
       out.println("<p>삭제 성공 입니다.</p>");
       

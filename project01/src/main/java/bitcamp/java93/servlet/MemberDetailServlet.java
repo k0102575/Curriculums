@@ -48,18 +48,18 @@ public class MemberDetailServlet extends HttpServlet {
 
       int no = Integer.parseInt(req.getParameter("no"));
 
-      Member member = memberService.get(no);
-      
-      out.printf("<form action='update' method='POST'>\n");
-      out.printf("번호:<input type='text' name='no' value='%d' readonly><br>\n", member.getNo());
-      out.printf("이름:<input type='text' name='name' value='%s'><br>\n", member.getName());
-      out.printf("전화:<input type='text' name='tel' value='%s'><br>\n", member.getTel());
-      out.printf("이메일:<input type='text' name='email' value='%s'><br>\n", member.getEmail());
-      out.println("암호:<input type='password' name='password'><br>\n");
-      out.println("<button>변경</button>");
-      out.println("<button type='button' onclick='doDelete()'>삭제</button>");
-      out.println("<button type='button' onclick='doList()'>목록</button>");
-      out.println("</form>");
+//      Member member = memberService.get(no);
+//      
+//      out.printf("<form action='update' method='POST'>\n");
+//      out.printf("번호:<input type='text' name='no' value='%d' readonly><br>\n", member.getNo());
+//      out.printf("이름:<input type='text' name='name' value='%s'><br>\n", member.getName());
+//      out.printf("전화:<input type='text' name='tel' value='%s'><br>\n", member.getTel());
+//      out.printf("이메일:<input type='text' name='email' value='%s'><br>\n", member.getEmail());
+//      out.println("암호:<input type='password' name='password'><br>\n");
+//      out.println("<button>변경</button>");
+//      out.println("<button type='button' onclick='doDelete()'>삭제</button>");
+//      out.println("<button type='button' onclick='doList()'>목록</button>");
+//      out.println("</form>");
 
       out.println("<script>");
       out.println("function doDelete() {");

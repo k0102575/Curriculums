@@ -1,20 +1,22 @@
 package bitcamp.java93.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import bitcamp.java93.domain.Member;
 
 public interface MemberDao {
-  List<Member> selectList(int pageNo, int pageSize) throws Exception; // selectList()
+  List<Member> selectList(Map<String,Object> valueMap); // selectList()
 
-  Member selectOne(int no) throws Exception; // selectOne()
+  List<Member> selectListByNames(Map<String,Object> valueMap); // selectListByNames()
 
-  int insert(Member member) throws Exception; // insert()
+  Member selectOne(int no); // selectOne()
 
-  int delete(int no) throws Exception; // delete()
+  Member selectOneByEmailPassword(Map<String,Object> valueMap); // selectOneByEmailPassword()
 
-  int update(Member member) throws Exception; // update()
+  int insert(Member member); // insert()
 
-  Member selectOneByEmailPassword(String email, String password) throws Exception; // selectOneByEmailPassword()
+  int update(Member member); // update()
 
+  int delete(int no); // delete()
 }
