@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;application-context.xml&apos; to &apos;springweb01/src/main/java/springweb01.step01&apos;&#x0D;&#x0A;- Original project: &apos;project01&apos;&#x0D;&#x0A;- Destination element: &apos;springweb01/src/main/java/springweb01.step01&apos;&#x0D;&#x0A;- Original element: &apos;application-context.xml&apos;" description="Copy file" destination="=springweb01/src\/main\/java&lt;springweb01.step01" element1="src/main/resources/bitcamp/java93/application-context.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1498449073909" units="0" version="1.0"/>
+</session>

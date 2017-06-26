@@ -1,7 +1,0 @@
-package bitcamp.java93.control;
-
-public interface Controller {
-  String service(HttpServletRequest request, HttpServletResponse response)
-  
-  
-}
