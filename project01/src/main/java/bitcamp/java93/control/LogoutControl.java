@@ -3,12 +3,13 @@ package bitcamp.java93.control;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Component("/auth/logout")
-public class LogoutControl implements Controller {
+@Controller
+public class LogoutControl {
 
-  @Override
+  @RequestMapping("/auth/logout")
   public String service(HttpServletRequest req, HttpServletResponse res) throws Exception {
     req.getSession().invalidate();
     

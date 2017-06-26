@@ -9,19 +9,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.fileupload.FileItem;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import bitcamp.java93.domain.Teacher;
 import bitcamp.java93.service.TeacherService;
 import bitcamp.java93.util.MultiPartFormProcessor;
 
-@Component("/teacher/add")
+@Controller
 
-public class TeacherAddControl implements Controller {
+public class TeacherAddControl {
   @Autowired
   TeacherService teacherService;
 
-  @Override
+  @RequestMapping("/teacher/add")
   public String service(HttpServletRequest req, HttpServletResponse res) throws Exception {
     Map<String, FileItem> partMap = MultiPartFormProcessor.parse(req);
 
