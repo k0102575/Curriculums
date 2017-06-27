@@ -1,0 +1,7 @@
+package control;
+
+import org.springframework.web.bind.support.WebBindingInitializer;
+
+public class MyWebBindingInitializer implements WebBindingInitializer{
+
+}

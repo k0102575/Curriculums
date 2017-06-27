@@ -1,0 +1,6 @@
+package control;
+
+@ControllerAdvice
+public class MyControlAdvice {
+
+}

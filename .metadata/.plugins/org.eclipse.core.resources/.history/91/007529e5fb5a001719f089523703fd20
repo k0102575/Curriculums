@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>controller16 테스트</title>
+</head>
+<body>
+
+<button id="btn1">"text/plain" 콘텐츠 보냄</button>
+<button id="btn2">"application/json" 콘텐츠 보냄</button>
+
+<div>
+	<textarea id="ta" cols="80" , rows=8> </textarea>
+</div>
+
+</body>
+
+</html>

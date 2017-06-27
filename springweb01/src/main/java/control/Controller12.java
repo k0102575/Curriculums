@@ -1,4 +1,4 @@
-/* Spring MVC : Request Handler(요청을 처리하는 메서드)의 파라미터들 I */
+/* Spring MVC : Request Handler(요청을 처리하는 메서드)의 파라미터들 II */
 package control;
 
 import java.io.PrintWriter;
@@ -51,6 +51,31 @@ public class Controller12 {
     out.printf("name: %s\n", n);
     out.printf("age: %d\n", a);
     out.printf("working: %b\n", w);
+  }
+  
+  @RequestMapping("ok4")
+  public void ok4(
+      @RequestParam(name="name", required=false)String n, 
+      @RequestParam(name="age", required=false, defaultValue="0")int a, 
+      @RequestParam(name="working", required=false, defaultValue="false")boolean w, HttpServletResponse res) throws Exception {
+    res.setContentType("text/plain;charset=UTF-8");
+    PrintWriter out = res.getWriter();
+    out.println("ok4()");
+    
+    out.printf("name: %s\n", n);
+    out.printf("age: %d\n", a);
+    out.printf("working: %b\n", w);
+  }
+  
+  @RequestMapping("ok5")
+  public void ok5(Member member, HttpServletResponse res) throws Exception {
+    res.setContentType("text/plain;charset=UTF-8");
+    PrintWriter out = res.getWriter();
+    out.println("ok5()");
+    
+    out.printf("name: %s\n", member.getName());
+    out.printf("age: %d\n", member.getAge());
+    out.printf("working: %b\n", member.isWorking());
   }
   
 }
