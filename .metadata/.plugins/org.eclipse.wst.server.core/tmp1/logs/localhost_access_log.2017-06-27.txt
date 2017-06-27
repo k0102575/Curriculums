@@ -1,0 +1,15 @@
+127.0.0.1 - - [27/Jun/2017:09:22:39 +0900] "GET / HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:23:00 +0900] "GET /springweb01/control/controller12/ok2.do HTTP/1.1" 500 4415
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:23:00 +0900] "GET /favicon.ico HTTP/1.1" 404 1089
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:23:14 +0900] "GET /springweb01/control/controller12/ok2.do?a=%ED%99%8D%EA%B8%B8%EB%8F%99 HTTP/1.1" 400 1135
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:24:51 +0900] "GET /springweb01/control/controller12/ok2.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=20&working=true HTTP/1.1" 500 4415
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:25:00 +0900] "GET /springweb01/control/controller12/ok1.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=20&working=true HTTP/1.1" 200 45
+127.0.0.1 - - [27/Jun/2017:09:31:24 +0900] "GET / HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:31:26 +0900] "GET /springweb01/controller12/ok1.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=20&working=true HTTP/1.1" 404 1055
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:31:27 +0900] "GET /springweb01/controller12/ok1.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=20&working=true HTTP/1.1" 404 1055
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:32:51 +0900] "GET /control/controller12/ok1.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=20&working=true HTTP/1.1" 200 45
+127.0.0.1 - - [27/Jun/2017:09:35:07 +0900] "GET / HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:35:15 +0900] "GET /control/controller12/ok1.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=20&working=true HTTP/1.1" 200 45
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:35:15 +0900] "GET /favicon.ico HTTP/1.1" 404 1089
+127.0.0.1 - - [27/Jun/2017:09:41:57 +0900] "GET / HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:09:42:36 +0900] "GET /control/controller12/ok2.do?name=%ED%99%8D%EA%B8%B8%EB%8F%99&age=20&working=true HTTP/1.1" 200 45
