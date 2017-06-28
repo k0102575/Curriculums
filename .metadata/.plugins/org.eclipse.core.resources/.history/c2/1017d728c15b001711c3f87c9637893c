@@ -1,0 +1,36 @@
+/* Spring MVC :  */
+package control;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+
+@Controller
+@RequestMapping("/control/controller22/")
+@SessionAttributes({"member2"})
+
+public class Controller22 {
+  @Autowired MyService service;
+
+  @RequestMapping("list")
+  public String ok1(Model model) throws Exception {
+    System.out.println("Controller22.list() ==>");
+    service.list();
+    System.out.println("<== Controller22.list()");
+    return "controller22_list";
+  }
+  
+  
+  @RequestMapping("detail")
+  public String ok2(Model model) throws Exception {
+    System.out.println("Controller22.detail() ==>");
+    service.detail();
+    System.out.println("<== Controller22.detail()");
+    return "controller22_detail";
+  }
+}

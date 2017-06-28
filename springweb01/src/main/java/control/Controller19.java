@@ -35,7 +35,6 @@ public class Controller19 {
   public String ok3(int age, HttpSession session) throws Exception {
     Member member = (Member) session.getAttribute("member");
     member.setAge(age);
-    
     return "controller19_ok3";
   }
   
@@ -43,7 +42,6 @@ public class Controller19 {
   public String ok4(Boolean working, HttpSession session) throws Exception {
     Member member = (Member) session.getAttribute("member");
     member.setWorking(working);
-    
     return "controller19_ok4";
   }
   
@@ -51,7 +49,6 @@ public class Controller19 {
   @ResponseBody
   public String reset(HttpSession session, SessionStatus status) throws Exception {
 //    status.setComplete();
-    
     session.invalidate();
     // 로그아웃
     

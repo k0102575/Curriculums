@@ -1,0 +1,16 @@
+package control;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class MyAdvice {
+  
+  @Before("control.MyService.list()")
+  public void filter01() {
+    System.out.println("MyAdvice.filter01()");
+  }
+  
+}

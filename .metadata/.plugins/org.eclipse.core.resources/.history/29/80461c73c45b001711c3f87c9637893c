@@ -1,0 +1,5 @@
+package control;
+
+public class Controller22_Filter implements Filter {
+
+}

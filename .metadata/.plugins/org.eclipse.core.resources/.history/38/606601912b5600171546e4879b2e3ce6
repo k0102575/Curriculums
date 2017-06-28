@@ -1,7 +1,0 @@
-package step27.ex3;
-
-import org.springframework.beans.factory.FactoryBean;
-
-public class DateFactoryBean implements FactoryBean {
-
-}

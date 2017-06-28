@@ -1,0 +1,33 @@
+package control;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+
+public class MyService {
+  
+  @Autowired MyDao dao;
+  
+  public void list() {
+    System.out.println("MyService.list()");
+    dao.selectList();
+  }
+  
+  public void detail() {
+    System.out.println("MyService.detail()");
+  }
+  
+  public void update() {
+    System.out.println("MyService.update()");
+  }
+  
+  public void insert() {
+    System.out.println("MyService.insert()");
+  }
+  
+  public void delete() {
+    System.out.println("MyService.delete()");
+  }
+  
+}

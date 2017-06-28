@@ -1,0 +1,16 @@
+package control;
+
+public class MyDao {
+  
+  public void selectList() {
+    System.out.println("MyDao.selectList()");
+  }
+  
+  public void selectOne() {
+    System.out.println("MyDao.selectOne()");
+  }
+  
+  public void selectOne() {
+    System.out.println("MyDao.selectOne()");
+  }
+}

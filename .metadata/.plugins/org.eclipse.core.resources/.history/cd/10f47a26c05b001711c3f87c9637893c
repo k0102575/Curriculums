@@ -1,0 +1,18 @@
+package control;
+
+public class MyService {
+  
+  public void list() {
+    System.out.println("MyService.list()");
+  }
+  
+  public void detail() {
+    System.out.println("MyService.list()");
+  }
+  
+  public void list() {
+    System.out.println("MyService.list()");
+  }
+  
+  
+}
