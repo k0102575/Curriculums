@@ -13,6 +13,8 @@ public interface TeacherDao {
 
   Teacher selectOneByEmailPassword(Map<String,Object> valueMap); // selectOneByEmailPassword()
   
+  int countAll();
+  
   int insert(Teacher teacher); // insert()
 
   int delete(int no); // delete()

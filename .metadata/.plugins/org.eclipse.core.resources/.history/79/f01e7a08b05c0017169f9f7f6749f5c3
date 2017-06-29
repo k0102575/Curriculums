@@ -1,0 +1,21 @@
+//로그인 사용자 정보를 가져온다.
+
+$.getJSON(/*contextRoot +*/ '/auth/userinfo.json', function(result) {
+  if (result.data != undefined){
+  $('#login').append($('<span>').html(result.data.name + '(' + result.data.email + ')'))
+             .append($('<a>').attr('id', 'logout-link').attr('href', '#').text('    로그아웃'))
+  }
+})
+
+$(document.body).on('click', '#logout-link', function(event){
+  $.getJSON('/auth/logout.json, function(result) {
+    var data = result.data
+    fiNo.text(data.no)
+    fiEmail.val(data.email)
+    fiName.val(data.name)
+    fiTel.val(data.tel)
+    fiHomepage.val(data.homepage)
+    fiFacebook.val(data.facebook)
+    fiTwitter.val(data.twitter)
+  })
+})

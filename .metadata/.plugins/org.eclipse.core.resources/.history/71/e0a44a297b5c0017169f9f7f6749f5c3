@@ -1,0 +1,8 @@
+package bitcamp.java93.control.json;
+
+public class JsonResult {
+  String status;
+  Object data;
+  
+  
+}

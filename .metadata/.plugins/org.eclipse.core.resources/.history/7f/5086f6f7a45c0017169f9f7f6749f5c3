@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>강사관리</title>
+<link rel="stylesheet"href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel='stylesheet' href='../css/common.css'>
+<style>
+.container {
+  width: 600px;
+  margin: 0px auto;
+}
+
+a[disabled] {
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+  <div class='header'>
+  <div id='logo'>비트캠프</div>
+
+</div>
+
+<h1>강사 조회</h1>
+  <form action='update.do' method='POST' enctype='multipart/form-data'>
+  번호:<input type='text' name='no' value='45' readonly><br>
+  이름:<input type='text' name='name' value='t116'><br>
+  전화:<input type='text' name='tel' value='1111'><br>
+  이메일:<input type='text' name='email' value='1111'><br>
+  암호:<input type='password' name='password'><br>
+  홈페이지:<input type='text' name='homepage' value='1111'><br>
+  페이스북:<input type='text' name='facebook' value='1111'><br>
+  트위터:<input type='text' name='twitter' value='1111'><br>
+  파일1:<input type='file' name='photo'><br>
+  파일2:<input type='file' name='photo'><br>
+  파일3:<input type='file' name='photo'><br>
+<div>
+
+
+<img class='photo1' src='photo/1498701325401_1'>
+
+
+</div>
+  <button>변경</button>
+  <button type='button' onclick='doDelete()'>삭제</button>
+  <button type='button' onclick='doList()'>목록</button>
+</form>
+
+
+  
+<div class='footer'>
+  <span>비트캠프 자바 93기</span> |  
+  <address>서울시 서초구 서초동 1327-15번지 비트아카데미 빌딩 3층</address>
+</div>
+</div>
+
+<script>
+function doDelete() {
+  location.href = 'delete.do?no=45'
+}
+</script>
+<script>
+function doList() {
+location.href = 'list.do'
+}
+</script>
+
+</body>
+</html>

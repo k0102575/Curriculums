@@ -6,16 +6,18 @@ import bitcamp.java93.domain.Teacher;
 
 public interface TeacherService {
   
-  public List<Teacher> list(int pageNo, int pageSize) throws Exception; // list()
+  List<Teacher> list(int pageNo, int pageSize) throws Exception; // list()
   
-  public Teacher get(int no) throws Exception; // get()
+  Teacher get(int no) throws Exception; // get()
   
-  public Teacher getByEmailPassword(String email, String password) throws Exception; // getByEmailPassword()
+  Teacher getByEmailPassword(String email, String password) throws Exception; // getByEmailPassword()
   
-  public void add(Teacher teacher) throws Exception; // add()
+  int getSize() throws Exception;
   
-  public void update(Teacher teacher) throws Exception; // update()
+  void add(Teacher teacher) throws Exception; // add()
+  
+  void update(Teacher teacher) throws Exception; // update()
    
-  public void remove(int no) throws Exception; // remove()
+  void remove(int no) throws Exception; // remove()
   
 }
