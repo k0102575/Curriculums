@@ -1,7 +1,0 @@
-package step28.ex4;
-
-import java.util.List;
-
-public interface ProjectDao {
-  Member selectOne(int no) throws Exception; // selectOne()
-}

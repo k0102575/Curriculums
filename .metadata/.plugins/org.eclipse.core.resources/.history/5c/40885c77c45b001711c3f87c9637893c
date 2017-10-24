@@ -1,7 +1,0 @@
-package control;
-
-import javax.servlet.Filter;
-
-public class Controller22_Filter implements Filter {
-  
-}
